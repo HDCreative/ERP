@@ -1,0 +1,32 @@
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.dll.config
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.dll
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.pdb
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\DAUltility.dll
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Entities.dll
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Entities.pdb
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.csprojResolveAssemblyReference.cache
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.dll
+D:\Source Cty\syngentaServicetest\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.dll.config
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\DAUltility.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Entities.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Entities.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.csprojResolveAssemblyReference.cache
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.dll.config
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Data.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\DAUltility.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Entities.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\bin\Debug\SyngentaAuditService.Entities.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.csproj.AssemblyReference.cache
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.csproj.CoreCompileInputs.cache
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.csproj.CopyComplete
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService.Data\obj\Debug\SyngentaAuditService.Data.pdb

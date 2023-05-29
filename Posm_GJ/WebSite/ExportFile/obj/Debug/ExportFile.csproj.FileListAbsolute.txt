@@ -1,0 +1,15 @@
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\ExportFile.exe.config
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\ExportFile.exe
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\ExportFile.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\BLL.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\DAL.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\Model.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\BLL.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\DAL.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\bin\Debug\Model.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\obj\Debug\ExportFile.csproj.AssemblyReference.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\obj\Debug\ExportFile.csproj.CoreCompileInputs.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\obj\Debug\ExportFile.csproj.CopyComplete
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\obj\Debug\ExportFile.exe
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\ExportFile\obj\Debug\ExportFile.pdb

@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Publish\posmvnpay_service</_PublishTargetUrl>
+    <History>True|2022-11-19T14:16:06.0829473Z;True|2022-11-19T20:25:41.5927987+07:00;False|2022-11-19T20:02:09.7197125+07:00;True|2022-11-19T19:40:08.9776786+07:00;True|2022-11-19T19:36:28.8837578+07:00;True|2022-04-09T19:47:05.9005675+07:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AbbottService.BLL.dll">
+      <publishTime>03/16/2020 12:05:42</publishTime>
+    </File>
+    <File Include="bin/AbbottService.BLL.pdb">
+      <publishTime>03/16/2020 12:05:42</publishTime>
+    </File>
+    <File Include="bin/AbbottService.Data.dll">
+      <publishTime>03/16/2020 12:05:41</publishTime>
+    </File>
+    <File Include="bin/AbbottService.Data.dll.config">
+      <publishTime>03/13/2020 14:48:32</publishTime>
+    </File>
+    <File Include="bin/AbbottService.Data.pdb">
+      <publishTime>03/16/2020 12:05:41</publishTime>
+    </File>
+    <File Include="bin/AbbottService.dll">
+      <publishTime>03/16/2020 12:05:42</publishTime>
+    </File>
+    <File Include="bin/AbbottService.Entities.dll">
+      <publishTime>03/16/2020 12:05:41</publishTime>
+    </File>
+    <File Include="bin/AbbottService.Entities.pdb">
+      <publishTime>03/16/2020 12:05:41</publishTime>
+    </File>
+    <File Include="bin/AbbottService.pdb">
+      <publishTime>03/16/2020 12:05:42</publishTime>
+    </File>
+    <File Include="bin/Aca.NetCore.Core.dll">
+      <publishTime>03/15/2019 17:24:26</publishTime>
+    </File>
+    <File Include="bin/Aca.NetCore.Framework.dll">
+      <publishTime>03/15/2019 17:25:44</publishTime>
+    </File>
+    <File Include="bin/BlueForceService.BLL.dll">
+      <publishTime>11/02/2017 14:50:05</publishTime>
+    </File>
+    <File Include="bin/BlueForceService.Data.dll">
+      <publishTime>11/02/2017 14:50:04</publishTime>
+    </File>
+    <File Include="bin/BlueForceService.Data.dll.config">
+      <publishTime>06/05/2017 15:26:01</publishTime>
+    </File>
+    <File Include="bin/BlueForceService.dll">
+      <publishTime>11/02/2017 14:50:05</publishTime>
+    </File>
+    <File Include="bin/BlueForceService.Entities.dll">
+      <publishTime>10/20/2017 17:31:37</publishTime>
+    </File>
+    <File Include="bin/DAUltility.dll">
+      <publishTime>11/18/2022 21:23:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationBlocks.Data.dll">
+      <publishTime>11/18/2022 21:23:24</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.BLL.dll">
+      <publishTime>11/19/2022 21:15:58</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.BLL.pdb">
+      <publishTime>11/19/2022 21:15:58</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.Data.dll">
+      <publishTime>11/19/2022 21:15:58</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.Data.dll.config">
+      <publishTime>11/19/2022 19:28:00</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.Data.pdb">
+      <publishTime>11/19/2022 21:15:58</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.dll">
+      <publishTime>11/19/2022 21:16:01</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.Entities.dll">
+      <publishTime>11/19/2022 20:02:06</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.Entities.pdb">
+      <publishTime>11/19/2022 20:02:06</publishTime>
+    </File>
+    <File Include="bin/PosmVNPayService.pdb">
+      <publishTime>11/19/2022 21:16:01</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.BLL.dll">
+      <publishTime>11/19/2022 19:36:24</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.BLL.pdb">
+      <publishTime>11/19/2022 19:36:24</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.Data.dll">
+      <publishTime>11/19/2022 19:36:24</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.Data.dll.config">
+      <publishTime>11/19/2022 19:28:00</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.Data.pdb">
+      <publishTime>11/19/2022 19:36:24</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.dll">
+      <publishTime>11/19/2022 19:41:52</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.Entities.dll">
+      <publishTime>11/19/2022 19:36:24</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.Entities.pdb">
+      <publishTime>11/19/2022 19:36:24</publishTime>
+    </File>
+    <File Include="bin/SyngentaAuditService.pdb">
+      <publishTime>11/19/2022 19:41:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/18/2022 21:23:20</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>11/18/2022 21:23:22</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>11/19/2022 21:16:02</publishTime>
+    </File>
+    <File Include="Service References/ServiceSMS/AbbottService.ServiceSMS.CompositeType.datasource">
+      <publishTime>11/18/2022 21:23:19</publishTime>
+    </File>
+    <File Include="Service References/ServiceSMS/BlueForceService.ServiceSMS.CompositeType.datasource">
+      <publishTime>06/05/2017 15:32:53</publishTime>
+    </File>
+    <File Include="Service References/ServiceSMS/PosmVNPayService.ServiceSMS.CompositeType.datasource">
+      <publishTime>11/19/2022 19:46:50</publishTime>
+    </File>
+    <File Include="ServiceMessage/MessagerHandler.ashx">
+      <publishTime>11/18/2022 21:23:19</publishTime>
+    </File>
+    <File Include="Web References/vn.brandsms/Reference.map">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/19/2022 21:16:02</publishTime>
+    </File>
+    <File Include="WebMobile/Register.aspx">
+      <publishTime>11/19/2022 20:24:40</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

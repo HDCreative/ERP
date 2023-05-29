@@ -1,0 +1,7 @@
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\bin\Debug\LocationToAddress.exe.config
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\bin\Debug\LocationToAddress.exe
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\bin\Debug\LocationToAddress.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\obj\Debug\LocationToAddress.csproj.AssemblyReference.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\obj\Debug\LocationToAddress.csproj.CoreCompileInputs.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\obj\Debug\LocationToAddress.exe
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\WebSite\LocationToAddress\obj\Debug\LocationToAddress.pdb

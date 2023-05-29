@@ -1,0 +1,11 @@
+D:\Sources\Posm_VnPay\Website\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\Sources\Posm_VnPay\Website\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\Sources\Posm_VnPay\Website\BLL\bin\Debug\BLL.dll
+D:\Sources\Posm_VnPay\Website\BLL\bin\Debug\BLL.pdb
+D:\Sources\Posm_VnPay\Website\BLL\bin\Debug\DAL.dll
+D:\Sources\Posm_VnPay\Website\BLL\bin\Debug\Model.dll
+D:\Sources\Posm_VnPay\Website\BLL\bin\Debug\DAL.pdb
+D:\Sources\Posm_VnPay\Website\BLL\bin\Debug\Model.pdb
+D:\Sources\Posm_VnPay\Website\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\Sources\Posm_VnPay\Website\BLL\obj\Debug\BLL.dll
+D:\Sources\Posm_VnPay\Website\BLL\obj\Debug\BLL.pdb

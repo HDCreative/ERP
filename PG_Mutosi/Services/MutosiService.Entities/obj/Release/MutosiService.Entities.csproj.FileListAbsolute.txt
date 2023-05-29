@@ -1,0 +1,5 @@
+Y:\MySource\mitosi\Services\MutosiService.Entities\obj\Release\MutosiService.Entities.csproj.CoreCompileInputs.cache
+Y:\MySource\mitosi\Services\MutosiService.Entities\bin\Release\MutosiService.Entities.dll
+Y:\MySource\mitosi\Services\MutosiService.Entities\bin\Release\MutosiService.Entities.pdb
+Y:\MySource\mitosi\Services\MutosiService.Entities\obj\Release\MutosiService.Entities.dll
+Y:\MySource\mitosi\Services\MutosiService.Entities\obj\Release\MutosiService.Entities.pdb

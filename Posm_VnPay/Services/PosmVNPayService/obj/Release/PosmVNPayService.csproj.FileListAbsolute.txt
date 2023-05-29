@@ -1,0 +1,17 @@
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\DAUltility.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\obj\Release\PosmVNPayService.csproj.AssemblyReference.cache
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\obj\Release\PosmVNPayService.csproj.CoreCompileInputs.cache
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\obj\Release\PosmVNPayService.csproj.CopyComplete
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.dll.config
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.pdb
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.BLL.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.Data.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.Entities.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.BLL.pdb
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.Data.pdb
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.Data.dll.config
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\bin\PosmVNPayService.Entities.pdb
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\obj\Release\PosmVNPayService.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService\obj\Release\PosmVNPayService.pdb

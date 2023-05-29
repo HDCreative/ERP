@@ -1,0 +1,65 @@
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.dll.config
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\DAUltility.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.pdb
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csprojResolveAssemblyReference.cache
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.dll
+D:\Source Cty\SyngentaAudit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.dll.config
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\DAUltility.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\Microsoft.ApplicationBlocks.Data.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll.config
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.pdb
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.AssemblyReference.cache
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.CoreCompileInputs.cache
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.CopyComplete
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.dll
+E:\AndroidProject\syn_audit\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.dll.config
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\DAUltility.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll.config
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.AssemblyReference.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.CoreCompileInputs.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.CopyComplete
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\Audit_Syngenta\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.dll.config
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\DAUltility.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\Microsoft.ApplicationBlocks.Data.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.BLL.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.Data.dll.config
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\bin\SyngentaAuditService.Entities.pdb
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.AssemblyReference.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.CoreCompileInputs.cache
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.csproj.CopyComplete
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.dll
+D:\WIN\CongViec\E-Technology\sources\ERP\AuditFrancia\Services\SyngentaAuditService\obj\Release\SyngentaAuditService.pdb

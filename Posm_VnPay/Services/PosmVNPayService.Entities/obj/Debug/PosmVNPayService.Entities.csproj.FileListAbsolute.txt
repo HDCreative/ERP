@@ -1,0 +1,5 @@
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService.Entities\bin\Debug\PosmVNPayService.Entities.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService.Entities\bin\Debug\PosmVNPayService.Entities.pdb
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService.Entities\obj\Debug\PosmVNPayService.Entities.csproj.CoreCompileInputs.cache
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService.Entities\obj\Debug\PosmVNPayService.Entities.dll
+E:\AndroidProject\posm_vnpay\Services\PosmVNPayService.Entities\obj\Debug\PosmVNPayService.Entities.pdb
