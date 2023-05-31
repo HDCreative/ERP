@@ -1,13 +1,14 @@
 import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
-import 'package:hr_diag/app/extensions/ExsString.dart';
-import 'package:hr_diag/app/routers/app_routes.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:hr_diag/app/extensions/ExsString.dart';
+// import 'package:hr_diag/app/routers/app_routes.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:hr_diag/app/extensions/ExsString.dart';
+// import 'package:get/get.dart';
 import 'package:hr_diag/app/screens/shop_list/shop_list_controller.dart';
 
-import '../../../base_controller.dart';
+// import '../../../base_controller.dart';
 
 // ignore: must_be_immutable
 class ShopItem extends StatelessWidget {
@@ -71,7 +72,7 @@ class ShopItem extends StatelessWidget {
                     height: 5,
                   ),
                   Visibility(
-                      visible: !shop.address.isNullOrWhiteSpace(),
+                      visible: !shop!.address!.isNullOrWhiteSpace(),
                       child: Row(
                         children: [
                           // Container(
@@ -85,8 +86,8 @@ class ShopItem extends StatelessWidget {
                               child: Container(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              !shop.address.isNullOrWhiteSpace()
-                                  ? shop.address
+                              !shop!.address!.isNullOrWhiteSpace()
+                                  ? shop!.address.toString()
                                   : '',
                               style: TextStyle(color: AppStyle.text_base_Color),
                             ),

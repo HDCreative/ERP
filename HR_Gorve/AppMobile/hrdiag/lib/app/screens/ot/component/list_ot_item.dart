@@ -33,8 +33,8 @@ class ItemOT extends GetView<OTController> {
                         width: double.infinity,
                         padding: EdgeInsets.all(8),
                         child: Text(
-                          !ExString(info!.employeeName).isNullOrWhiteSpace()
-                              ? info!.employeeName
+                          !ExString(info.employeeName.toString()).isNullOrWhiteSpace()
+                              ? info.employeeName.toString()
                               : 'demo',
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.left,
@@ -56,7 +56,7 @@ class ItemOT extends GetView<OTController> {
                         ),
                         Expanded(
                             child: Text(
-                          info.oTDate,
+                          info.oTDate.toString(),
                           style:
                               TextStyle(color: AppStyle.primary, fontSize: 13),
                         ))
@@ -69,7 +69,7 @@ class ItemOT extends GetView<OTController> {
                     width: double.infinity,
                     alignment: Alignment.center,
                     child: Text(
-                      info.oTTargetName,
+                      info.oTTargetName.toString(),
                       style: TextStyle(color: Colors.black, fontSize: 13),
                       textAlign: TextAlign.center,
                     ),
@@ -80,7 +80,7 @@ class ItemOT extends GetView<OTController> {
                     width: double.infinity,
                     alignment: Alignment.center,
                     child: Text(
-                      info.oTValue,
+                      info.oTValue.toString(),
                       style: TextStyle(color: Colors.black, fontSize: 13),
                     ),
                   ),
@@ -118,7 +118,7 @@ class ItemOT extends GetView<OTController> {
                             child: Container(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            info.statusName,
+                            info.statusName.toString(),
                             style: TextStyle(color: Colors.black, fontSize: 13),
                             textAlign: TextAlign.center,
                           ),

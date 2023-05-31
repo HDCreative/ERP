@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:hr_diag/app/base/LoginInfo.dart';
 import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/base/TabInfo.dart';
@@ -12,7 +11,6 @@ import 'package:hr_diag/app/screens/main/account/account.dart';
 import 'package:hr_diag/app/screens/shop_list/shop_list_apple.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../base_controller.dart';
 
 class ShopListAppleController extends BaseController {
@@ -88,7 +86,7 @@ class ShopListAppleController extends BaseController {
              Get.offAllNamed(Routes.LOGIN);
            },
            onCancel: () {
-             Navigator.of(Get.context).pop();
+             Navigator.of(Get.context!).pop();
            });
      }
    if(ti.id ==2)
@@ -111,7 +109,7 @@ class ShopListAppleController extends BaseController {
            }
          },
          onCancel: () {
-           Navigator.of(Get.context).pop();
+           Navigator.of(Get.context!).pop();
          });
    }
   }
@@ -119,8 +117,8 @@ class ShopListAppleController extends BaseController {
   void confirmApple(
       {String title = 'Message',
         required String content,
-        Function? onConfirm,
-        Function? onCancel}) {
+        VoidCallback? onConfirm,
+        VoidCallback? onCancel}) {
     Get.defaultDialog(
         title: title,
         titleStyle: TextStyle(color: Colors.black, fontSize: 18),

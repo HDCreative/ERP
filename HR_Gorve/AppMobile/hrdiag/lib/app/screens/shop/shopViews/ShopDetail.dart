@@ -1,7 +1,5 @@
-import 'dart:io';
+// ignore_for_file: unnecessary_null_comparison
 
-// import 'package:hr_diag/app/base/LoginInfo.dart';
-import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
 // import 'package:hr_diag/app/core/FileUtils.dart';
 import 'package:hr_diag/app/screens/shop/shopComponents/KPIIndicator.dart';
@@ -60,9 +58,9 @@ class ShopDetail extends GetView<ShopController> {
                           constraints: BoxConstraints(maxWidth: 250, minWidth: 200),
                           color: const Color(0xFFE6F7FF),
                           child: Text(
-                            controller.shop != null && controller.shop.shopName.isNullOrWhiteSpace()
+                            controller.shop! != null && controller.shop!.shopName!.isNullOrWhiteSpace()
                                 ? ''
-                                : controller.shop.shopName,
+                                : controller.shop!.shopName.toString(),
                             style: TextStyle(overflow: TextOverflow.ellipsis,
                                 fontSize: 15, fontWeight: FontWeight.bold),
                           ),
@@ -91,9 +89,9 @@ class ShopDetail extends GetView<ShopController> {
                         child: Row(
                           children: [
                             Text(controller.shop != null &&
-                                    controller.shop.phone.isNullOrWhiteSpace()
+                                    controller.shop!.phone!.isNullOrWhiteSpace()
                                 ? ''
-                                : controller.shop.phone),
+                                : controller.shop!.phone.toString()),
                             SizedBox(
                               width: 10,
                             ),
@@ -105,7 +103,7 @@ class ShopDetail extends GetView<ShopController> {
                               ),
                               onTap: () {
                                 controller
-                                    .callWitiPhoneNumner(controller.shop.phone);
+                                    .callWitiPhoneNumner(controller.shop!.phone!);
                               },
                             )
                           ],
@@ -137,10 +135,10 @@ class ShopDetail extends GetView<ShopController> {
                             Expanded(
                                 child: Text(
                               controller.shop != null &&
-                                      controller.shop.address
+                                      controller.shop!.address!
                                           .isNullOrWhiteSpace()
                                   ? ''
-                                  : controller.shop.address,
+                                  : controller.shop!.address.toString(),
                               textAlign: TextAlign.right,
                             ))
                           ],
@@ -187,7 +185,6 @@ class ShopDetail extends GetView<ShopController> {
                   padding: EdgeInsets.all(10),
                   width: size.width,
                   height: 200,
-                  // ignore: unnecessary_null_comparison
                   child: controller.shop != null ? photoView() : Center()),
               Visibility(
                   visible: true,
@@ -226,7 +223,7 @@ class ShopDetail extends GetView<ShopController> {
                         ),
                       ),
                     ),
-                    onTap: () => !controller.work.value.locked
+                    onTap: () => !controller.work!.value.locked
                         ? controller.startCamera(1000)
                         : null,
                   ))
@@ -236,12 +233,11 @@ class ShopDetail extends GetView<ShopController> {
   }
 
   Widget photoView() {
-    // ignore: unnecessary_null_comparison
     if (controller.overview.value == null) {
-      if (!controller.shop.photo.isNullOrWhiteSpace()) {
+      if (!controller.shop!.photo!.isNullOrWhiteSpace()) {
         return CachedNetworkImage(
           fit: BoxFit.fill,
-          imageUrl: controller.shop.photo,
+          imageUrl: controller.shop!.photo!,
           placeholder: (context, url) => Container(
             padding: EdgeInsets.all(10),
             child: Container(
@@ -274,10 +270,10 @@ class ShopDetail extends GetView<ShopController> {
           return SizedBox();
         }
       } else {
-        if (!controller.shop.photo.isNullOrWhiteSpace()) {
+        if (!controller.shop!.photo!.isNullOrWhiteSpace()) {
           return CachedNetworkImage(
             fit: BoxFit.contain,
-            imageUrl: controller.shop.photo,
+            imageUrl: controller.shop!.photo!,
             placeholder: (context, url) => Container(
               padding: EdgeInsets.all(10),
               child: Center(

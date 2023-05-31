@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:hr_diag/app/routers/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -42,10 +40,11 @@ class WelcomeController extends BaseController {
       Permission.storage,
       //Permission.manageExternalStorage
     ].request();
+    bool flag = true;
     statuses.forEach((key, value) {
-      if (value.isGranted == false) return false;
+      if (value.isGranted == false) flag = false;
     });
-    return true;
+    return flag;
   }
 
   Future<void> _startMain() async {

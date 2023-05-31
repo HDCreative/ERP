@@ -1,19 +1,19 @@
-import 'package:hr_diag/app/base/ShopInfo.dart';
-import 'package:hr_diag/app/base/WorkResultInfo.dart';
+// import 'package:hr_diag/app/base/ShopInfo.dart';
+// import 'package:hr_diag/app/base/WorkResultInfo.dart';
 import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/screens/shop/shopComponents/ShopTab.dart';
 import 'package:hr_diag/app/screens/shop/shopViews/ShopDetail.dart';
 import 'package:hr_diag/app/screens/shop/shopViews/shopAudit.dart';
 import 'package:hr_diag/app/screens/shop/shop_controller.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Shop extends GetView<ShopController> {
   @override
   Widget build(BuildContext context) {
-    Size size = Get.mediaQuery.size;
+    //Size size = Get.mediaQuery.size;
     return WillPopScope(
           onWillPop: () => controller.onBackPress(),
           child: Scaffold(
@@ -34,8 +34,8 @@ class Shop extends GetView<ShopController> {
 
   Widget shopBody() {
     return Container(
-      height: Utility.getHeightScreen(Get.context),
-      width: Utility.getWidthScreen(Get.context),
+      height: Utility.getHeightScreen(Get.context!),
+      width: Utility.getWidthScreen(Get.context!),
       color: Colors.white,
       child: Stack(
         children: [

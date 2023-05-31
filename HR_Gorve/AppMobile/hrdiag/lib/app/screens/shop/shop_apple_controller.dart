@@ -1,29 +1,20 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'dart:async';
 import 'dart:io';
-import 'dart:io' as Io;
-
-import 'dart:typed_data';
-
 import 'package:hr_diag/app/base/AttendantInfo.dart';
-import 'package:hr_diag/app/base/BaseInfo.dart';
 import 'package:hr_diag/app/base/LoginInfo.dart';
 import 'package:hr_diag/app/base/MasterInfo.dart';
 import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/base/WorkResultInfo.dart';
-import 'package:hr_diag/app/core/DateTimes.dart';
-import 'package:hr_diag/app/core/FileUtils.dart';
-import 'package:hr_diag/app/core/Shared.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
 import 'package:location/location.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../base_controller.dart';
 import '../../core/HttpResponseMessage.dart';
 import '../../core/HttpUtils.dart';
@@ -79,7 +70,7 @@ class ShopAppleController extends BaseController {
   Rx<AttendantInfo> overview = new AttendantInfo().obs;
   List<MasterInfo> lstMaster = <MasterInfo>[];
   Rx<MasterInfo> masterInfo = new MasterInfo(
-          "ReasonResult", "0", 0, "--Choose--", "--Choose--", null, null, -1)
+          "ReasonResult", "0", 0, "--Choose--", "--Choose--", '', 0, -1) //null, null -> '', 0
       .obs;
   bool isCapture = false;
   LoginInfo? loginInfo;
@@ -123,11 +114,11 @@ class ShopAppleController extends BaseController {
               .map((i) => AttendantAppleInfo.fromJson(i))
               .toList(); //AttendantAppleInfo.fromJson(response.content);
           if (ap != null && ap.length > 0 && ap[0].linkin != "EMPTY") {
-            if (!ExString(ap[0].linkin).isNullOrWhiteSpace())
-              imageCheckInPath = ap[0].linkin.obs;
-            if (!ExString(ap[0].linkout).isNullOrWhiteSpace())
-              imageCheckOutPath = ap[0].linkout.obs;
-            tx.text = ap[0].address;
+            if (!ExString(ap[0].linkin!).isNullOrWhiteSpace())
+              imageCheckInPath = ap[0].linkin!.obs;
+            if (!ExString(ap[0].linkout!).isNullOrWhiteSpace())
+              imageCheckOutPath = ap[0].linkout!.obs;
+            tx.text = ap[0].address.toString();
           }
         }
         change(null, status: RxStatus.success());
@@ -149,7 +140,7 @@ class ShopAppleController extends BaseController {
 
   @override
   void dispose() {
-    tabController.dispose();
+    tabController!.dispose();
     super.dispose();
   }
 
@@ -157,7 +148,7 @@ class ShopAppleController extends BaseController {
   Future<void> onReady() async {
     //await createAuditResult(shop).then((value) => getShopOVVPath(shop));
     work = new WorkResultInfo().obs; //demo
-    controllerComment.text = work.value.comment;
+    controllerComment.text = work!.value.comment;
     change(null, status: RxStatus.success());
     super.onReady();
   }
@@ -183,16 +174,16 @@ class ShopAppleController extends BaseController {
         timeStart = timeStart + 1;
         LocationData loc = await location.getLocation();
         Position posTemp = new Position(
-            longitude: loc.longitude,
-            latitude: loc.latitude,
-            accuracy: loc.accuracy,
+            longitude: loc.longitude!,
+            latitude: loc.latitude!,
+            accuracy: loc.accuracy!,
             timestamp: null,
             altitude: null,
             speedAccuracy: null,
             heading: null,
             speed: null);
         position = posTemp.obs;
-        if (position == null || position.value == null) {
+        if (position == null || position!.value == null) {
           await Future.delayed(Duration(seconds: 1));
         }
       }
@@ -212,17 +203,17 @@ class ShopAppleController extends BaseController {
       }
       HttpResponseMessage response =
           HttpResponseMessage(statusCode: 202, content: "Start send...");
-      PickedFile pickedFile = await picker.getImage(
+      PickedFile? pickedFile = await picker.getImage(
           source: ImageSource.camera, maxWidth: 1280, imageQuality: 90);
       if (pickedFile != null && !pickedFile.path.isNullOrWhiteSpace()) {
         Map<String, String> param = new Map();
-        print(shop.shopId.toString() + '/' + pickedFile.path);
+        print(shop!.shopId.toString() + '/' + pickedFile.path);
         param["FUNCTION"] = "PHOTO_APPLE";
-        param["ShopId"] = shop.shopId.toString();
+        param["ShopId"] = shop!.shopId.toString();
         param["AttendanceType"] = AttendanceType.toString();
         param["Address"] = tx.text;
-        param["latitude"] = position.value.latitude.toString();
-        param["longitude"] = position.value.longitude.toString();
+        param["latitude"] = position!.value.latitude.toString();
+        param["longitude"] = position!.value.longitude.toString();
         File imageFile = File(pickedFile.path);
         response = await HttpUtils.uploadFile(
             body: param, file: imageFile, url: Urls.UPLOAD_FILE);

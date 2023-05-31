@@ -15,6 +15,7 @@ class AddShopController extends BaseController {
     for (int i = 0; i < 5; i++) {
       DropDownItem town =
           new DropDownItem(i, 'Thành phố ' + i.toString(), null);
+      // ignore: unused_local_variable
       DropDownItem district =
           new DropDownItem(i, 'Quuận ' + i.toString(), null);
       townData.add(town);

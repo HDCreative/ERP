@@ -43,7 +43,7 @@ class DetailOTView extends GetView<DetailOTController> {
                             ),
                           ),
                           Text(
-                            'Tăng ca ngày: ' + controller.info.oTDate,
+                            'Tăng ca ngày: ' + controller.info!.oTDate.toString(),
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),
@@ -68,7 +68,7 @@ class DetailOTView extends GetView<DetailOTController> {
                             ),
                             Expanded(
                               flex: 1,
-                              child: Text(controller.info.createdTime),
+                              child: Text(controller.info!.createdTime.toString()),
                             ),
                           ],
                         ),
@@ -86,9 +86,9 @@ class DetailOTView extends GetView<DetailOTController> {
                             ),
                             Expanded(
                               flex: 1,
-                              child: Text(!ExString(controller.info.confirmTime)
+                              child: Text(!ExString(controller.info!.confirmTime.toString())
                                       .isNullOrWhiteSpace()
-                                  ? controller.info.confirmTime
+                                  ? controller.info!.confirmTime.toString()
                                   : ''),
                             ),
                           ],
@@ -108,11 +108,11 @@ class DetailOTView extends GetView<DetailOTController> {
                             Expanded(
                               flex: 1,
                               child: Text(
-                                controller.info.statusName,
+                                controller.info!.statusName.toString(),
                                 style: TextStyle(
-                                    color: controller.info.status == 0
+                                    color: controller.info!.status == 0
                                         ? Colors.red.shade700
-                                        : controller.info.status == 2
+                                        : controller.info!.status == 2
                                             ? Colors.yellow.shade700
                                             : Colors.green.shade700),
                               ),
@@ -133,7 +133,7 @@ class DetailOTView extends GetView<DetailOTController> {
                             ),
                             Expanded(
                               flex: 1,
-                              child: Text(controller.info.oTValue),
+                              child: Text(controller.info!.oTValue.toString()),
                             ),
                           ],
                         ),
@@ -151,7 +151,7 @@ class DetailOTView extends GetView<DetailOTController> {
                             ),
                             Expanded(
                               flex: 1,
-                              child: Text(controller.info.oTTargetName),
+                              child: Text(controller.info!.oTTargetName.toString()),
                             ),
                           ],
                         ),
@@ -170,9 +170,9 @@ class DetailOTView extends GetView<DetailOTController> {
                             Expanded(
                               flex: 1,
                               child: Text(
-                                  !ExString(controller.info.employeeComment)
+                                  !ExString(controller.info!.employeeComment.toString())
                                           .isNullOrWhiteSpace()
-                                      ? controller.info.employeeComment
+                                      ? controller.info!.employeeComment.toString()
                                       : ''),
                             ),
                           ],
@@ -192,9 +192,9 @@ class DetailOTView extends GetView<DetailOTController> {
                             Expanded(
                               flex: 1,
                               child: Text(
-                                  !ExString(controller.info.userConfirmComment)
+                                  !ExString(controller.info!.userConfirmComment.toString())
                                           .isNullOrWhiteSpace()
-                                      ? controller.info.userConfirmComment
+                                      ? controller.info!.userConfirmComment.toString()
                                       : ''),
                             ),
                           ],
@@ -205,7 +205,7 @@ class DetailOTView extends GetView<DetailOTController> {
                       ),
                       Visibility(
                           visible: controller.employeeType == 'sup' &&
-                              controller.info.status == 2,
+                              controller.info!.status == 2,
                           child: TextField(
                             controller: controller.editComment,
                             decoration: new InputDecoration(
@@ -254,7 +254,7 @@ class DetailOTView extends GetView<DetailOTController> {
                                 child: Text('Không đồng ý'),
                                 onPressed: () async {
                                   await controller.confirmOT(
-                                      controller.info, 0);
+                                      controller.info!, 0);
                                 },
                                 style: ElevatedButton.styleFrom(
                                     primary: Colors.red,

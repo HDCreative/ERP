@@ -1,36 +1,23 @@
+// ignore_for_file: unnecessary_null_comparison
 import 'dart:async';
 import 'dart:io';
-import 'dart:io' as Io;
-
-import 'dart:typed_data';
-
 import 'package:hr_diag/app/base/AttendantInfo.dart';
 import 'package:hr_diag/app/base/LoginInfo.dart';
 import 'package:hr_diag/app/base/MasterInfo.dart';
 import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/base/WorkResultInfo.dart';
 import 'package:hr_diag/app/core/DateTimes.dart';
-import 'package:hr_diag/app/core/FileUtils.dart';
-import 'package:hr_diag/app/core/Shared.dart';
-import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart';
 import 'package:location/location.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../base_controller.dart';
 import '../../core/HttpResponseMessage.dart';
 import '../../core/HttpUtils.dart';
 import '../../core/Urls.dart';
-
-
-//Hào code.
 class ShopController extends BaseController {
   RxList<MasterInfo> lstKPI = <MasterInfo>[].obs;
   RxList<AttendantInfo> lstAttendants = <AttendantInfo>[].obs;
@@ -48,7 +35,7 @@ class ShopController extends BaseController {
   Rx<AttendantInfo> overview = new AttendantInfo().obs;
   List<MasterInfo> lstMaster = <MasterInfo>[];
   Rx<MasterInfo> masterInfo = new MasterInfo(
-          "ReasonResult", "0", 0, "--Choose--", "--Choose--", null, null, -1)
+          "ReasonResult", "0", 0, "--Choose--", "--Choose--", '', 0, -1) //null, null -> '', 0
       .obs;
   bool isCapture = false;
   LoginInfo? loginInfo;
@@ -59,7 +46,7 @@ class ShopController extends BaseController {
   ShopController? controller;
   TabController? tabController;
   ShopInfo? shop;
-  List<String> lst;
+  List<String>? lst;
   Location location = Location();
 
   Axis scrollDirection = Axis.vertical;
@@ -70,12 +57,12 @@ class ShopController extends BaseController {
     shop = Get.arguments[0];
     //controller.work = Get.arguments[1].obs;
     lst = [];
-    lst.add('Thông tin shop');
-    lst.add('Chấm công');
-    tabController = new TabController(length: lst.length, vsync: this);
+    lst!.add('Thông tin shop');
+    lst!.add('Chấm công');
+    tabController = new TabController(length: lst!.length, vsync: this);
     tabController!.addListener(() {
       if (tabController!.indexIsChanging) {
-        FocusScope.of(Get.context).requestFocus(new FocusNode());
+        FocusScope.of(Get.context!).requestFocus(new FocusNode());
       }
     });
     position =
@@ -84,7 +71,7 @@ class ShopController extends BaseController {
     lstAttendants.clear();
     overview.value.photoServer = '';
     await isEnableGPS();
-    await getOvvAttImage(shop);
+    await getOvvAttImage(shop!);
     super.onInit();
   }
 
@@ -94,15 +81,15 @@ class ShopController extends BaseController {
 
   @override
   void dispose() {
-    tabController.dispose();
+    tabController!.dispose();
     super.dispose();
   }
 
   @override
   Future<void> onReady() async {
     work = new WorkResultInfo().obs;
-    work.value.locked = false;
-    controllerComment.text = work.value.comment;
+    work!.value.locked = false;
+    controllerComment.text = work!.value.comment;
     super.onReady();
   }
 
@@ -112,7 +99,7 @@ class ShopController extends BaseController {
         await launch("tel://" + phone);
       }
     } catch (ex) {
-      controller.alert(content: ex.toString());
+      controller!.alert(content: ex.toString());
     }
   }
 
@@ -120,9 +107,9 @@ class ShopController extends BaseController {
     int timeStart = 0;
     position = null;
     while ((position == null ||
-            position.value == null ||
-            position.value.latitude == null ||
-            position.value.longitude == null) &&
+            position!.value == null ||
+            position!.value.latitude == null ||
+            position!.value.longitude == null) &&
         timeStart < 15) {
       timeStart = timeStart + 1;
       LocationData loc = await location.getLocation();
@@ -141,9 +128,9 @@ class ShopController extends BaseController {
       }
     }
     print("start GPS CHECKIN/OUT: " +
-        position.value.latitude.toString() +
+        position!.value.latitude.toString() +
         "," +
-        position.value.longitude.toString());
+        position!.value.longitude.toString());
   }
 
   Future<void> startCamera(int AttendantType) async {
@@ -152,17 +139,17 @@ class ShopController extends BaseController {
       await setPosition();
       HttpResponseMessage response =
           HttpResponseMessage(statusCode: 202, content: "Start send...");
-      PickedFile pickedFile = await picker.getImage(
+      PickedFile? pickedFile = await picker.getImage(
           source: ImageSource.camera, maxWidth: 960, imageQuality: 90);
       if (pickedFile != null && !pickedFile.path.isNullOrWhiteSpace()) {
         Map<String, String> param = new Map();
-        print(shop.shopId.toString() + '/' + pickedFile.path);
+        print(shop!.shopId.toString() + '/' + pickedFile.path);
         param["FUNCTION"] = "PHOTO_APPLE";
-        param["ShopId"] = shop.shopId.toString();
+        param["ShopId"] = shop!.shopId.toString();
         param["AttendantType"] = AttendantType.toString();
-        param["latitude"] = position.value.latitude.toString();
-        param["longitude"] = position.value.longitude.toString();
-        param['accuracy'] = position.value.accuracy.toString();
+        param["latitude"] = position!.value.latitude.toString();
+        param["longitude"] = position!.value.longitude.toString();
+        param['accuracy'] = position!.value.accuracy.toString();
         param["Address"] = '';
         param['WorkDate'] = DateTimes.today().toString();
         param['WorkTime'] = DateTimes.milisecondDateToString(
@@ -268,9 +255,7 @@ class ShopController extends BaseController {
     isEnableGPS();
     int statusTC = -1;
     startCamera(checkout);
-
   }
-
 
   Future<bool> backPressed() async {
     Get.back();

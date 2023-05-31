@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'dart:io';
+// import 'dart:io';
 
-import 'package:hr_diag/app/base/MasterInfo.dart';
+// import 'package:hr_diag/app/base/MasterInfo.dart';
 import 'package:hr_diag/app/components/base_app_bar.dart';
-import 'package:hr_diag/app/components/base_textfield.dart';
-import 'package:hr_diag/app/core/Utility.dart';
+// import 'package:hr_diag/app/components/base_textfield.dart';
+// import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/screens/shop/shop_apple_controller.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
@@ -17,45 +17,52 @@ class ShopAuditApple extends GetView<ShopAppleController> {
   @override
   Widget build(BuildContext context) {
     return controller.obx((state) => WillPopScope(
-            child: Scaffold(
-                appBar: BaseAppBar(
-          title: Text('Workplace'),
-          rightIsNotify: false,
-          height: 50,
-          isShowBackGround: false,
-          leftIcon: Icons.arrow_back_ios,
-          leftClick: () {
-            controller.onBack();
-          },
-          //rightIcon: Icon(Icons.add),
-          rightClick: () {},
-        ),
-          body: Column(children: [
-            SizedBox(height: 20,),
-            TextField(
-              controller: controller.tx,
-              decoration: new InputDecoration(
-                  border: new OutlineInputBorder(
-                      borderSide:
-                      new BorderSide(color: Colors.teal)),
-                  hintText: 'Address',
-                  helperText:
-                  'Please enter the detailed address of the place of work ( 2056 char)',
-                  labelText: 'Address',
-                  prefixIcon: const Icon(
-                    Icons.home,
-                    color: Colors.green,
-                  ),
-                  prefixText: '',
-
-                  suffixText: '',
-                  suffixStyle:
-                  const TextStyle(color: Colors.green)),
-            ),
-            SizedBox(height: 20,),
-            checkInOut()
-          ],),
-            )));
+      onWillPop: () {
+        // Xử lý hành động khi nhấn nút back
+        return Future.value(true); // Giá trị true cho phép thoát khỏi màn hình
+      },
+        child: Scaffold(
+          appBar: BaseAppBar(
+            title: Text('Workplace'),
+            rightIsNotify: false,
+            height: 50,
+            isShowBackGround: false,
+            leftIcon: Icons.arrow_back_ios,
+            leftClick: () {
+              controller.onBack();
+            },
+            //rightIcon: Icon(Icons.add),
+            rightClick: () {},
+          ),
+          body: Column(
+            children: [
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: controller.tx,
+                decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    hintText: 'Address',
+                    helperText:
+                        'Please enter the detailed address of the place of work ( 2056 char)',
+                    labelText: 'Address',
+                    prefixIcon: const Icon(
+                      Icons.home,
+                      color: Colors.green,
+                    ),
+                    prefixText: '',
+                    suffixText: '',
+                    suffixStyle: const TextStyle(color: Colors.green)),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              checkInOut()
+            ],
+          ),
+        )));
   }
 
   Widget checkInOut() {
@@ -77,20 +84,20 @@ class ShopAuditApple extends GetView<ShopAppleController> {
                       2,
                     ],
                     child: !ExString(controller.imageCheckInPath.value)
-                                .isNullOrWhiteSpace()
+                            .isNullOrWhiteSpace()
                         ? Padding(
                             padding: EdgeInsets.all(2),
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(5.0),
                                 child:
-                                // Image.file(
-                                //   new File(controller.imageCheckInPath.value),
-                                //   fit: BoxFit.contain,
-                                //   alignment: Alignment.center,
-                                //   width: 140,
-                                //   height: 104,
-                                // )
-                                CachedNetworkImage(
+                                    // Image.file(
+                                    //   new File(controller.imageCheckInPath.value),
+                                    //   fit: BoxFit.contain,
+                                    //   alignment: Alignment.center,
+                                    //   width: 140,
+                                    //   height: 104,
+                                    // )
+                                    CachedNetworkImage(
                                   fit: BoxFit.fill,
                                   imageUrl: controller.imageCheckInPath.value,
                                   placeholder: (context, url) => Container(
@@ -101,9 +108,9 @@ class ShopAuditApple extends GetView<ShopAppleController> {
                                       child: CircularProgressIndicator(),
                                     ),
                                   ),
-                                  errorWidget: (context, url, error) => Icon(Icons.error),
-                                )
-                            ))
+                                  errorWidget: (context, url, error) =>
+                                      Icon(Icons.error),
+                                )))
                         : InkWell(
                             child: Container(
                               width: 140,
@@ -133,7 +140,9 @@ class ShopAuditApple extends GetView<ShopAppleController> {
                                 ],
                               ),
                             ),
-                      onTap: () => controller.checkOutProcess(0), /*controller.checkInProcess(shop)*/))),
+                            onTap: () => controller.checkOutProcess(
+                                0), /*controller.checkInProcess(shop)*/
+                          ))),
             LimitedBox(
                 maxHeight: 100,
                 maxWidth: 140,
@@ -144,20 +153,19 @@ class ShopAuditApple extends GetView<ShopAppleController> {
                       1,
                       2,
                     ],
-                    child:
-                            !ExString(controller.imageCheckOutPath.value)
-                                .isNullOrWhiteSpace()
+                    child: !ExString(controller.imageCheckOutPath.value)
+                            .isNullOrWhiteSpace()
                         ? Padding(
                             padding: EdgeInsets.all(2),
                             child:
-                            // Image.file(
-                            //   new File(controller.imageCheckOutPath.value),
-                            //   fit: BoxFit.contain,
-                            //   alignment: Alignment.center,
-                            //   width: 140,
-                            //   height: 104,
-                            // )
-                            CachedNetworkImage(
+                                // Image.file(
+                                //   new File(controller.imageCheckOutPath.value),
+                                //   fit: BoxFit.contain,
+                                //   alignment: Alignment.center,
+                                //   width: 140,
+                                //   height: 104,
+                                // )
+                                CachedNetworkImage(
                               fit: BoxFit.fill,
                               imageUrl: controller.imageCheckOutPath.value,
                               placeholder: (context, url) => Container(
@@ -168,9 +176,9 @@ class ShopAuditApple extends GetView<ShopAppleController> {
                                   child: CircularProgressIndicator(),
                                 ),
                               ),
-                              errorWidget: (context, url, error) => Icon(Icons.error),
-                            )
-                            )
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
+                            ))
                         : InkWell(
                             child: Container(
                               width: 140,

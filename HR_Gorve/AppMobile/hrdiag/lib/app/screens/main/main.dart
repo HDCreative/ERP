@@ -4,10 +4,10 @@ import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/components/base_bottom_navigator_bar.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hr_diag/app/extensions/ExsString.dart';
+// import 'package:hr_diag/app/extensions/ExsString.dart';
 
 import 'main_controller.dart';
 
@@ -116,7 +116,7 @@ class MainView extends GetView<MainController> {
                     children: [
                       IndexedStack(
                         index: controller.currentIndex,
-                        children: controller.tabs.map((e) => e.page).toList(),
+                        children: controller.tabs!.map((e) => e.page!).toList(),
                       )
                     ],
                   ),

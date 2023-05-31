@@ -1,5 +1,4 @@
-import 'dart:async';
-import 'dart:io';
+
 
 import 'package:hr_diag/app/base/MasterInfo.dart';
 // import 'package:hr_diag/app/base/ShopInfo.dart';
@@ -172,7 +171,7 @@ class ShopAudit extends GetView<ShopController> {
 
   Widget shopStatus() {
     return Container(
-      width: Utility.getWidthScreen(Get.context),
+      width: Utility.getWidthScreen(Get.context!),
       child: Column(
         children: [
           Row(
@@ -209,7 +208,7 @@ class ShopAudit extends GetView<ShopController> {
                               );
                             }).toList(),
                             isExpanded: true,
-                            onChanged: !controller.work.value.locked
+                            onChanged: !controller.work!.value.locked
                                 ? null /*(MasterInfo value) async {
                                 controller.selectedDropdownButtonHandler(
                                     shop, value);
@@ -236,9 +235,9 @@ class ShopAudit extends GetView<ShopController> {
                       return itemKPI(controller.lstKPI[index]);
                     })))
         // ignore: unnecessary_null_comparison
-        : controller.work.value.auditResult != null &&
-                controller.work.value.auditResult != 0 &&
-                controller.work.value.auditResult != 1
+        : controller.work!.value.auditResult != null &&
+                controller.work!.value.auditResult != 0 &&
+                controller.work!.value.auditResult != 1
             ? Expanded(
                 flex: 1,
                 child: ListView(
@@ -248,7 +247,7 @@ class ShopAudit extends GetView<ShopController> {
                       height: 100,
                       margin: EdgeInsets.only(top: 20, bottom: 80),
                       child: BaseTextField(
-                        enabled: !controller.work.value.locked,
+                        enabled: !controller.work!.value.locked,
                         radius: 5,
                         textInputType: TextInputType.multiline,
                         maxLines: 3,

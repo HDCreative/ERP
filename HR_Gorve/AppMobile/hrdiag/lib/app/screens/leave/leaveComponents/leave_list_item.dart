@@ -23,7 +23,7 @@ class ItemLeave extends GetView<LeaveController>{
                   padding: EdgeInsets.all(8),
                   color: const Color(0xFFFFFFFF),
                   child: Text(
-                    !Utility.isNullOrWhiteSpace(info.employeeName) ? info.employeeName : '',
+                    !Utility.isNullOrWhiteSpace(info!.employeeName.toString()) ? info!.employeeName.toString() : '',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 12),
                   ),
@@ -39,7 +39,7 @@ class ItemLeave extends GetView<LeaveController>{
                 padding: EdgeInsets.all(8),
                 color: const Color(0xFFFFFFFF),
                 child: Text(
-                  !Utility.isNullOrWhiteSpace(info.oFFDate) ? info.oFFDate : '',
+                  !Utility.isNullOrWhiteSpace(info!.oFFDate.toString()) ? info!.oFFDate.toString() : '',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 12),
                 ),
@@ -54,7 +54,7 @@ class ItemLeave extends GetView<LeaveController>{
                 padding: EdgeInsets.all(8),
                 color: const Color(0xFFFFFFFF),
                 child: Text(
-                  !Utility.isNullOrWhiteSpace(info.oFFTypeName) ? info.oFFTypeName : '',
+                  !Utility.isNullOrWhiteSpace(info!.oFFTypeName.toString()) ? info!.oFFTypeName.toString() : '',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 12),
                 ),
@@ -120,7 +120,7 @@ class ItemLeave extends GetView<LeaveController>{
                                     : Colors.green.shade700),
                           ),
                           Text(
-                            !Utility.isNullOrWhiteSpace(info!.statusName) ? info!.statusName : '',
+                            !Utility.isNullOrWhiteSpace(info!.statusName.toString()) ? info!.statusName.toString(): '',
                             textAlign: TextAlign.center,
                             style:
                             TextStyle(fontSize: 12),

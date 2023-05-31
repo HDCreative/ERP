@@ -84,8 +84,8 @@ class ShopAppleItem extends StatelessWidget {
                               child: Container(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              !shop.address.isNullOrWhiteSpace()
-                                  ? shop.address
+                              !shop!.address!.isNullOrWhiteSpace()
+                                  ? shop!.address!
                                   : '',
                               style: TextStyle(color: AppStyle.text_base_Color),
                             ),

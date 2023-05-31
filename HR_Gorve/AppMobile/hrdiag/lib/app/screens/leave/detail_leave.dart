@@ -75,7 +75,7 @@ class DetailLeave extends GetView<DetailLeaveController> {
                       Expanded(
                         flex: 1,
                         child: Text(
-                          !Utility.isNullOrWhiteSpace(controller.info.oFFDate) ? controller.info.oFFDate : '',
+                          !Utility.isNullOrWhiteSpace(controller.info.oFFDate.toString()) ? controller.info.oFFDate.toString() : '',
                           textAlign: TextAlign.end,
                         ),
                       )
@@ -111,7 +111,7 @@ class DetailLeave extends GetView<DetailLeaveController> {
                       Expanded(
                         flex: 1,
                         child: Text(
-                          !Utility.isNullOrWhiteSpace(controller.info.oFFTypeName) ? controller.info.oFFTypeName : '',
+                          !Utility.isNullOrWhiteSpace(controller.info.oFFTypeName.toString()) ? controller.info.oFFTypeName.toString() : '',
                           textAlign: TextAlign.end,
                         ),
                       ),
@@ -128,7 +128,7 @@ class DetailLeave extends GetView<DetailLeaveController> {
                     Expanded(
                       flex: 1,
                       child: Text(
-                        !Utility.isNullOrWhiteSpace(controller.info.employeeComment) ? controller.info.employeeComment : '',
+                        !Utility.isNullOrWhiteSpace(controller.info.employeeComment.toString()) ? controller.info.employeeComment.toString() : '',
                         textAlign: TextAlign.end,
                       ),
                     )
@@ -144,7 +144,7 @@ class DetailLeave extends GetView<DetailLeaveController> {
                     Expanded(
                       flex: 1,
                       child: Text(
-                        !Utility.isNullOrWhiteSpace(controller.info.statusName) ? controller.info.statusName : '',
+                        !Utility.isNullOrWhiteSpace(controller.info.statusName.toString()) ? controller.info.statusName.toString() : '',
                         textAlign: TextAlign.end,
                       ),
                     )

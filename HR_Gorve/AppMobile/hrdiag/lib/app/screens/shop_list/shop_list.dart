@@ -1,8 +1,8 @@
 import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/components/base_textfield.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
-import 'package:hr_diag/app/routers/app_routes.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:hr_diag/app/routers/app_routes.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
