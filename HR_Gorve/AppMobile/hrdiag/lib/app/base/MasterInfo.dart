@@ -1,28 +1,18 @@
 import 'BaseInfo.dart';
 
 class MasterInfo extends BaseInfo {
-  String listCode;
-
-  String code;
-
-  int id;
-
-  String name;
-
-  String nameVN;
-
-  String description;
-  String Name_viVN;
-
-  String refCode;
-
-  int refId;
-
-  int sortList;
-
+  late String listCode;
+  late String code;
+  late int id;
+  late String name;
+  late String nameVN;
+  late String description;
+  late String Name_viVN;
+  late String refCode;
+  late int refId;
+  late int sortList;
   bool isSelected = false;
-
-  int kpiStatus; // 0: chưa khảo sát, 1: đang làm, 2: hoàn thành.
+  late int kpiStatus; // 0: chưa khảo sát, 1: đang làm, 2: hoàn thành.
 
   MasterInfo(this.listCode, this.code, this.id, this.nameVN, this.description,
       this.refCode, this.refId, this.sortList);

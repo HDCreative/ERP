@@ -1,14 +1,16 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/components/base_dropdown.dart';
 import 'package:hr_diag/app/components/base_gradient_button.dart';
 import 'package:hr_diag/app/components/base_time_dropdown.dart';
 import 'package:hr_diag/app/screens/ot/component/list_ot_item.dart';
 import 'package:hr_diag/app/screens/ot/ot_controller.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'component/list_ot.dart';
+// import 'component/list_ot.dart';
 
 class ManagerOTView extends GetView<OTController> {
   @override

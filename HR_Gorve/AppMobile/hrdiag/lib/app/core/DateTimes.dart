@@ -20,7 +20,7 @@ class DateTimes {
     return DateFormat('yyyy-MM-dd HH:mm:ss').format(d);
   }
 
-  static String dateToString({int datetime, int type = 1}) {
+  static String dateToString({int? datetime, int type = 1}) {
     String year = datetime.toString().substring(0, 4);
     String month = datetime.toString().substring(4, 6);
     String day = datetime.toString().substring(6, 8);
@@ -30,7 +30,7 @@ class DateTimes {
       return year.toString() + "-" + month.toString() + "-" + day.toString();
   }
 
-  static String dateIntToString({int date, int type = 1}) {
+  static String dateIntToString({int? date, int type = 1}) {
     String year = date.toString().substring(0, 4);
     String month = date.toString().substring(4, 6);
     String day = date.toString().substring(6, 8);
@@ -47,12 +47,12 @@ class DateTimes {
         formatInt(dateTime.day));
   }
 
-  static int getDateBeforeAboutDay(int dateInt, int numOfDay) {
+  static int? getDateBeforeAboutDay(int dateInt, int numOfDay) {
     int year, month, day;
     try {
-      year = int.tryParse(dateInt.toString().substring(0, 4));
-      month = int.tryParse(dateInt.toString().substring(4, 6));
-      day = int.tryParse(dateInt.toString().substring(6, 8));
+      year = int.tryParse(dateInt.toString().substring(0, 4))!;
+      month = int.tryParse(dateInt.toString().substring(4, 6))!;
+      day = int.tryParse(dateInt.toString().substring(6, 8))!;
     } catch (ex) {
       return null;
     }

@@ -30,9 +30,9 @@ import '../../core/HttpUtils.dart';
 import '../../core/Urls.dart';
 
 class AttendantAppleInfo {
-  String linkin;
-  String linkout;
-  String address;
+  String? linkin;
+  String? linkout;
+  String? address;
 
   AttendantAppleInfo();
 
@@ -65,9 +65,9 @@ class AttendantAppleInfo {
 class ShopAppleController extends BaseController {
   RxList<MasterInfo> lstKPI = <MasterInfo>[].obs;
   RxList<AttendantInfo> lstAttendants = <AttendantInfo>[].obs;
-  Rx<Position> position;
+  Rx<Position>? position;
   String error = "";
-  String documentPath;
+  String? documentPath;
   RxString imagePath = "".obs;
   final int checkin = 0;
   final int checkout = 1;
@@ -82,19 +82,19 @@ class ShopAppleController extends BaseController {
           "ReasonResult", "0", 0, "--Choose--", "--Choose--", null, null, -1)
       .obs;
   bool isCapture = false;
-  LoginInfo loginInfo;
+  LoginInfo? loginInfo;
   Location location = Location();
   TextEditingController controllerComment = new TextEditingController();
   FocusNode focusNodeComment = new FocusNode();
-  Timer timeHandle;
+  Timer? timeHandle;
   TextEditingController tx = new TextEditingController();
-  ShopAppleController controller;
-  TabController tabController;
-  ShopInfo shop;
-  List<String> lst;
+  ShopAppleController? controller;
+  TabController? tabController;
+  ShopInfo? shop;
+  List<String>? lst;
 
   Axis scrollDirection = Axis.vertical;
-  ScrollController scrollController;
+  ScrollController? scrollController;
 
   @override
   onInit() async {
@@ -114,12 +114,12 @@ class ShopAppleController extends BaseController {
           HttpResponseMessage(statusCode: 202, content: "Start send...");
       Map<String, String> param = new Map();
       param["FUNCTION"] = "GET_PHOTO_APPLE";
-      param["ShopId"] = shop.shopId.toString();
+      param["ShopId"] = shop!.shopId.toString();
       response = await HttpUtils.post(body: param, url: Urls.UPLOAD_FILE);
       print(response.statusCode.toString() + '-' + response.content.toString());
       if (response.statusCode == 200) {
         if (response.content != null) {
-          List<AttendantAppleInfo> ap = (response.content as List)
+          List<AttendantAppleInfo>? ap = (response.content as List)
               .map((i) => AttendantAppleInfo.fromJson(i))
               .toList(); //AttendantAppleInfo.fromJson(response.content);
           if (ap != null && ap.length > 0 && ap[0].linkin != "EMPTY") {
@@ -168,7 +168,7 @@ class ShopAppleController extends BaseController {
         await launch("tel://" + phone);
       }
     } catch (ex) {
-      controller.alert(content: ex.toString());
+      controller!.alert(content: ex.toString());
     }
   }
 
@@ -176,9 +176,9 @@ class ShopAppleController extends BaseController {
     try {
       int timeStart = 0;
       while ((position == null ||
-              position.value == null ||
-              position.value.latitude == null ||
-              position.value.longitude == null) &&
+              position!.value == null ||
+              position!.value.latitude == null ||
+              position!.value.longitude == null) &&
           timeStart < 15) {
         timeStart = timeStart + 1;
         LocationData loc = await location.getLocation();

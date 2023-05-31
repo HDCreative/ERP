@@ -11,11 +11,11 @@ import '../../../base_controller.dart';
 
 // ignore: must_be_immutable
 class ShopItem extends StatelessWidget {
-  ShopInfo shop;
-  Size size;
-  int index;
-  int lenght;
-  ShopListController controller;
+  ShopInfo? shop;
+  Size? size;
+  int? index;
+  int? lenght;
+  ShopListController? controller;
 
   ShopItem({this.shop, this.size, this.index, this.lenght, this.controller});
 
@@ -24,9 +24,9 @@ class ShopItem extends StatelessWidget {
     return InkWell(
       child: Container(
         margin: EdgeInsets.fromLTRB(5, 5, 5, 0),
-        width: size.width,
+        width: size!.width,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey[300]),
+            border: Border.all(color: Colors.grey),
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Row(
           mainAxisSize: MainAxisSize.max,
@@ -44,7 +44,7 @@ class ShopItem extends StatelessWidget {
                   height: 80,
                   child: Image.asset(
                     'assets/icons/ic_shop.png',
-                    color: shop.status == 1 ? Colors.greenAccent : Colors.lightBlueAccent,
+                    color: shop!.status == 1 ? Colors.greenAccent : Colors.lightBlueAccent,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -62,7 +62,7 @@ class ShopItem extends StatelessWidget {
                           "/" +
                           lenght.toString() +
                           ". " +
-                          shop.shopName,
+                          shop!.shopName.toString(),
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
@@ -96,7 +96,7 @@ class ShopItem extends StatelessWidget {
                   Visibility(
                     child: Container(
                       margin: EdgeInsets.only(top: 5),
-                      width: size.width,
+                      width: size!.width,
                       child: Row(
                         children: [
                           Expanded(
@@ -110,7 +110,7 @@ class ShopItem extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
-                                    shop.oosAchieve.toString() + '%',
+                                    shop!.oosAchieve.toString() + '%',
                                     style: TextStyle(
                                         color: Colors.red,
                                         fontWeight: FontWeight.bold),
@@ -128,7 +128,7 @@ class ShopItem extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
-                                    shop.sosAchieve.toString() + '%',
+                                    shop!.sosAchieve.toString() + '%',
                                     style: TextStyle(
                                         color: AppStyle.primary,
                                         fontWeight: FontWeight.bold),
@@ -143,7 +143,7 @@ class ShopItem extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     padding: EdgeInsets.all(5),
-                    width: size.width,
+                    width: size!.width,
                     decoration: BoxDecoration(
                         color: AppStyle.primary.withOpacity(0.2),
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -176,7 +176,7 @@ class ShopItem extends StatelessWidget {
           ],
         ),
       ),
-      onTap: () => controller.toShop(shop),
+      onTap: () => controller!.toShop(shop!),
     );
   }
 }

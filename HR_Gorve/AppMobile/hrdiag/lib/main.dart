@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'app/controller_bindings.dart';
-import 'app/core/NotifcationService.dart';
+// import 'app/core/NotifcationService.dart';
 import 'app/routers/app_pages.dart';
 
 Future<void> main() async {

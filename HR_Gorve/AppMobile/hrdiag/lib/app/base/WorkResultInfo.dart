@@ -2,22 +2,23 @@
 import 'BaseInfo.dart';
 
 class WorkResultInfo extends BaseInfo {
-  int shopId;
-  int shopFormatId;
-  int workDate;
-  int auditResult;
-  bool isSave;
-  bool isDone;
-  bool isUpload;
-  String shopName;
-  String shopType;
-  String workTime;
-  String comment;
-  bool locked;
+  late int shopId;
+  late int shopFormatId;
+  late int workDate;
+  late int auditResult;
+  late bool isSave;
+  late bool isDone;
+  late bool isUpload;
+  late String shopName;
+  late String shopType;
+  late String workTime;
+  late String comment;
+  late bool locked;
 
   WorkResultInfo();
 
-  int isUploadFn() {
+  int? isUploadFn() {
+    // ignore: unnecessary_null_comparison
     if (isUpload == null) {
       return null;
     } else {
@@ -29,7 +30,8 @@ class WorkResultInfo extends BaseInfo {
     }
   }
 
-  int isDoneFn() {
+  int? isDoneFn() {
+    // ignore: unnecessary_null_comparison
     if (isDone == null) {
       return null;
     } else {
@@ -41,7 +43,8 @@ class WorkResultInfo extends BaseInfo {
     }
   }
 
-  int isSaveFn() {
+  int? isSaveFn() {
+    // ignore: unnecessary_null_comparison
     if (isSave == null) {
       return null;
     } else {
@@ -53,7 +56,7 @@ class WorkResultInfo extends BaseInfo {
     }
   }
 
-  bool mapisUpload(Map<String, dynamic> map) {
+  bool? mapisUpload(Map<String, dynamic> map) {
     if (map["isUpload"] == null) {
       return null;
     } else {
@@ -65,7 +68,7 @@ class WorkResultInfo extends BaseInfo {
     }
   }
 
-  bool mapisDone(Map<String, dynamic> map) {
+  bool? mapisDone(Map<String, dynamic> map) {
     if (map["isDone"] == null) {
       return null;
     } else {
@@ -77,7 +80,7 @@ class WorkResultInfo extends BaseInfo {
     }
   }
 
-  bool mapisSave(Map<String, dynamic> map) {
+  bool? mapisSave(Map<String, dynamic> map) {
     if (map["isSave"] == null) {
       return null;
     } else {
@@ -89,7 +92,7 @@ class WorkResultInfo extends BaseInfo {
     }
   }
 
-  bool mapIslocked(Map<String, dynamic> map) {
+  bool? mapIslocked(Map<String, dynamic> map) {
     if (map["isDone"] == null) {
       return null;
     } else {
@@ -124,12 +127,12 @@ class WorkResultInfo extends BaseInfo {
     shopFormatId = map["shopFormatId"];
     workTime = map["workTime"];
     auditResult = map["auditResult"];
-    isUpload = mapisUpload(map);
+    isUpload = mapisUpload(map)!;
     shopType = map["shopType"];
     shopName = map["shopName"];
     comment = map["comment"];
-    isSave = mapisSave(map);
-    isDone = mapisDone(map);
-    locked = mapIslocked(map);
+    isSave = mapisSave(map)!;
+    isDone = mapisDone(map)!;
+    locked = mapIslocked(map)!;
   }
 }

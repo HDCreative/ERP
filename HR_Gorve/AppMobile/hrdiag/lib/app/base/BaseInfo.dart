@@ -1,5 +1,5 @@
 class BaseInfo {
-  int rowId;
+  int? rowId;
 
   BaseInfo({this.rowId});
 

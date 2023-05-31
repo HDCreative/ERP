@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
@@ -33,8 +33,8 @@ class ItemOT extends GetView<OTController> {
                         width: double.infinity,
                         padding: EdgeInsets.all(8),
                         child: Text(
-                          !ExString(info.employeeName).isNullOrWhiteSpace()
-                              ? info.employeeName
+                          !ExString(info!.employeeName).isNullOrWhiteSpace()
+                              ? info!.employeeName
                               : 'demo',
                           overflow: TextOverflow.visible,
                           textAlign: TextAlign.left,

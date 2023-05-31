@@ -3,17 +3,17 @@ import 'dart:io';
 import 'BaseInfo.dart';
 
 class AttendantInfo extends BaseInfo {
-  int shopId;
-  int attendantDate;
-  int attendantType;
-  int attendantTime;
-  double latitude;
-  double longitude;
-  double accuracy;
-  String attendantPhoto;
-  String photoServer;
-  int uploaded;
-  int workId;
+  late int shopId;
+  late int attendantDate;
+  late int attendantType;
+  late int attendantTime;
+  late double latitude;
+  late double longitude;
+  late double accuracy;
+  late String attendantPhoto;
+  late String photoServer;
+  late int uploaded;
+  late int workId;
 
   AttendantInfo();
 
@@ -82,7 +82,7 @@ class AttendantInfo extends BaseInfo {
 
   String getFileName(int employeeId) {
     File file = new File(attendantPhoto);
-    String name = file.path.split("/").last;
+    late String name = file.path.split("/").last;
     return employeeId.toString() +
         "_" +
         name
@@ -92,7 +92,7 @@ class AttendantInfo extends BaseInfo {
             .replaceAll(".product", ".jpeg");
   }
 
-  // String getUrl(int employeeId) {
+  // late String getUrl(late int employeeId) {
   //   return Urls.ROOT +
   //       "Upload/Images/" +
   //       attendantDate.toString() +

@@ -1,20 +1,20 @@
 import 'BaseInfo.dart';
 
 class ShopInfo extends BaseInfo {
-  int shopId;
-  String shopName;
-  String shopCode;
-  String address;
-  String contactName;
-  String phone;
-  double latitude;
-  double longitude;
-  String shopType;
-  String photo;
-  int status;
-  int orderPending;
-  double sosAchieve;
-  double oosAchieve;
+  late int? shopId;
+  late String? shopName;
+  late String? shopCode;
+  late String? address;
+  late String? contactName;
+  late String? phone;
+  late double? latitude;
+  late double? longitude;
+  late String? shopType;
+  late String? photo;
+  late int? status;
+  late int? orderPending;
+  late double? sosAchieve;
+  late double? oosAchieve;
 
   ShopInfo(
       {this.shopId,

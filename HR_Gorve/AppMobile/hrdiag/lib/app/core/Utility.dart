@@ -34,6 +34,7 @@ class Utility {
 
   static Future<bool> iosGPSEnable() async {
     bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
+    // ignore: unnecessary_null_comparison
     if (isLocationServiceEnabled == null || !isLocationServiceEnabled) {
       return false;
     }
@@ -45,18 +46,18 @@ class Utility {
     return true;
   }
 
-  static void nextFocus(BuildContext context) {
+  static void nextFocus(BuildContext? context) {
     do {
-      FocusScope.of(context).nextFocus();
+      FocusScope.of(context!).nextFocus();
     } while (
-        FocusScope.of(context).focusedChild.context.widget is! EditableText);
+        FocusScope.of(context).focusedChild!.context!.widget is! EditableText);
   }
 
-  static void unFocus(BuildContext context) {
+  static void unFocus(BuildContext? context) {
     do {
-      FocusScope.of(context).unfocus();
+      FocusScope.of(context!).unfocus();
     } while (
-        FocusScope.of(context).focusedChild.context.widget is! EditableText);
+        FocusScope.of(context).focusedChild!.context!.widget is! EditableText);
   }
 
   static String getPlatform() {
@@ -90,7 +91,7 @@ class Utility {
 
   static Future<String> getVersion() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    int version = int.tryParse(packageInfo.buildNumber);
+    int? version = int.tryParse(packageInfo.buildNumber);
     return version.toString();
   }
 
@@ -110,6 +111,7 @@ class Utility {
   }
 
   static bool isNullOrWhiteSpace(String value) {
+    // ignore: unnecessary_null_comparison
     return value == null ||
         value == "" ||
         value.isEmpty ||
@@ -127,7 +129,7 @@ class Utility {
             length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
   }
 
-  static Future<String> getDirectoryPath() async {
+  static Future<String?> getDirectoryPath() async {
     try {
       return await chanel.invokeMethod("getDirectoryPath");
     } catch (ex) {

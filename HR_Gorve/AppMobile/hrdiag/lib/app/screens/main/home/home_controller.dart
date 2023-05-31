@@ -12,9 +12,9 @@ import '../../../core/Urls.dart';
 import '../../../model/showKPIModel.dart';
 
 class HomeController extends BaseController {
-  int currentIndex;
-  String employeeType;
-  LoginInfo user;
+  int? currentIndex;
+  late String? employeeType;
+  LoginInfo? user;
   List<TabInfo> tabs = new List.empty(growable: true);
   RxList<ShowKPIModel> lstKPI = RxList.empty(growable: true);
 
@@ -40,14 +40,14 @@ class HomeController extends BaseController {
             (value.content as List).map((e) => ShowKPIModel.fromJson(e)).toList());
         lstKPI.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
 
   void init() async {
     user = await Shared.getUser();
-    employeeType = (user.typeid == 2 ? 'sup' : 'nv');
+    employeeType = (user!.typeid == 2 ? 'sup' : 'nv');
     tabs.add(new TabInfo(
         id: 0,
         title: 'Cửa hàng',
@@ -76,7 +76,7 @@ class HomeController extends BaseController {
           iconColor: const Color(0xFFFF6D65),
           page: null));
     }
-    if (user.typeid == 10) {
+    if (user!.typeid == 10) {
       tabs.add(new TabInfo(
           id: 1,
           title: 'Tăng ca',

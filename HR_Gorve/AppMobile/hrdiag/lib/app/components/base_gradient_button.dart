@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 class BaseGradientButton extends StatelessWidget {
   final double width;
   final double height;
-  final Function onPressed;
+  final VoidCallback? onPressed;
   final String text;
   final Color textColor;
   final double fontSize;
   final double radius;
 
   const BaseGradientButton({
-    Key key,
-    @required this.text,
+    Key? key,
+    required this.text,
     this.width = double.infinity,
     this.height = 40,
     this.onPressed,
@@ -33,7 +33,7 @@ class BaseGradientButton extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey[500],
+              color: Colors.grey,
               offset: Offset(0.0, 1.5),
               blurRadius: 1.5,
             ),

@@ -1,5 +1,6 @@
 extension ExString on String {
   bool isNullOrWhiteSpace() {
+    // ignore: unnecessary_null_comparison
     return this == null ||
         this == "" ||
         this.length == 0 ||

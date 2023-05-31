@@ -17,10 +17,10 @@ import '../../base_controller.dart';
 
 class ShopListAppleController extends BaseController {
   TextEditingController searchController = new TextEditingController();
-  Timer timeHandle;
+  Timer? timeHandle;
 
   List<ShopInfo> lstShop = new List.empty(growable: true);
-  List<TabInfo> tabs;
+  List<TabInfo>? tabs;
   int currentIndex = 0;
 
   @override
@@ -46,19 +46,19 @@ class ShopListAppleController extends BaseController {
     }
     if (tabs == null) {
       tabs = new List.empty(growable: true);
-      tabs.add(new TabInfo(
+      tabs!.add(new TabInfo(
           id: 0,
           title: 'Home',
           icon: 'assets/icons/ic_home.png',
           isSelected: true,
           page: ShopListAppleView()));
-      tabs.add(new TabInfo(
+      tabs!.add(new TabInfo(
           id: 1,
           title: 'Logout',
           icon: 'assets/icons/ic_user.png',
           isSelected: false,
           page: AccountView()));
-      tabs.add(new TabInfo(
+      tabs!.add(new TabInfo(
           id: 2,
           title: 'Clear Account & Data',
           icon: 'assets/icons/ic_user.png',
@@ -96,13 +96,13 @@ class ShopListAppleController extends BaseController {
      confirmApple(
          content: "Do you want to delete your account and all your data?",
          onConfirm: () async {
-           LoginInfo user = await Shared.getUser();
+           LoginInfo? user = await Shared.getUser();
            HttpResponseMessage response =
            HttpResponseMessage(statusCode: 202, content: "Start send...");
            Map<String, String> param = new Map();
            param["FUNCTION"] = "APPLE_EMPLOYEE";
            param["ActionType"] = "3";
-           param["Email"] = user.loginName;
+           param["Email"] = user!.loginName;
            response = await HttpUtils.post(body: param, url: Urls.UPLOAD_FILE);
            print(response.statusCode.toString() + '-' + response.content.toString());
            if (response.statusCode == 200) {
@@ -118,9 +118,9 @@ class ShopListAppleController extends BaseController {
 
   void confirmApple(
       {String title = 'Message',
-        @required String content,
-        Function onConfirm,
-        Function onCancel}) {
+        required String content,
+        Function? onConfirm,
+        Function? onCancel}) {
     Get.defaultDialog(
         title: title,
         titleStyle: TextStyle(color: Colors.black, fontSize: 18),

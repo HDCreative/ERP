@@ -1,14 +1,14 @@
 import 'package:hr_diag/app/components/base_app_bar.dart';
-import 'package:hr_diag/app/components/base_gradient_button.dart';
-import 'package:hr_diag/app/core/AppStyle.dart';
+// import 'package:hr_diag/app/components/base_gradient_button.dart';
+// import 'package:hr_diag/app/core/AppStyle.dart';
 import 'package:hr_diag/app/core/Utility.dart';
-import 'package:hr_diag/app/model/off_model.dart';
+// import 'package:hr_diag/app/model/off_model.dart';
 import 'package:hr_diag/app/screens/leave/detail_leave_controller.dart';
 import 'package:hr_diag/app/screens/leave/leaveComponents/Separator.dart';
-import 'package:hr_diag/app/screens/leave/leave_controller.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:hr_diag/app/screens/leave/leave_controller.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class DetailLeave extends GetView<DetailLeaveController> {

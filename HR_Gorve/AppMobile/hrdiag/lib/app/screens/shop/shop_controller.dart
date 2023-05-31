@@ -34,9 +34,9 @@ import '../../core/Urls.dart';
 class ShopController extends BaseController {
   RxList<MasterInfo> lstKPI = <MasterInfo>[].obs;
   RxList<AttendantInfo> lstAttendants = <AttendantInfo>[].obs;
-  Rx<Position> position;
+  Rx<Position>? position;
   String error = "";
-  String documentPath;
+  String? documentPath;
   RxString imagePath = "".obs;
   final int checkin = 0;
   final int checkout = 1;
@@ -51,19 +51,19 @@ class ShopController extends BaseController {
           "ReasonResult", "0", 0, "--Choose--", "--Choose--", null, null, -1)
       .obs;
   bool isCapture = false;
-  LoginInfo loginInfo;
+  LoginInfo? loginInfo;
   TextEditingController controllerComment = new TextEditingController();
   FocusNode focusNodeComment = new FocusNode();
-  Timer timeHandle;
+  Timer? timeHandle;
 
-  ShopController controller;
-  TabController tabController;
-  ShopInfo shop;
+  ShopController? controller;
+  TabController? tabController;
+  ShopInfo? shop;
   List<String> lst;
   Location location = Location();
 
   Axis scrollDirection = Axis.vertical;
-  ScrollController scrollController;
+  ScrollController? scrollController;
 
   @override
   onInit() async {
@@ -73,8 +73,8 @@ class ShopController extends BaseController {
     lst.add('Thông tin shop');
     lst.add('Chấm công');
     tabController = new TabController(length: lst.length, vsync: this);
-    tabController.addListener(() {
-      if (tabController.indexIsChanging) {
+    tabController!.addListener(() {
+      if (tabController!.indexIsChanging) {
         FocusScope.of(Get.context).requestFocus(new FocusNode());
       }
     });

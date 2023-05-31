@@ -5,21 +5,21 @@ import 'package:hr_diag/app/base/MasterInfo.dart';
 import 'package:get_storage/get_storage.dart';
 
 class Shared {
-  static GetStorage _storage;
+  static GetStorage? _storage;
 
-  static write({String key, dynamic value}) async {
+  static write({String? key, dynamic value}) async {
     if (_storage == null) _storage = new GetStorage();
-    await _storage.write(key, value);
+    await _storage!.write(key!, value);
   }
 
-  static Future<T> read<T>({String key}) async {
+  static Future<T> read<T>({String? key}) async {
     if (_storage == null) _storage = new GetStorage();
-    return await _storage.read(key);
+    return await _storage!.read(key!);
   }
 
-  static Future<void> remove({String key}) async {
+  static Future<void> remove({String? key}) async {
     if (_storage == null) _storage = new GetStorage();
-    return await _storage.remove(key);
+    return await _storage!.remove(key!);
   }
 
   static Future<void> setUser(LoginInfo user) async {
@@ -27,10 +27,12 @@ class Shared {
     await write(key: 'UserLogin', value: json);
   }
 
-  static Future<LoginInfo> getUser() async {
+  static Future<LoginInfo?> getUser() async {
     String data = await read(key: 'UserLogin');
+    // ignore: unnecessary_null_comparison
     if (data != null) {
       Map userMap = jsonDecode(data);
+      // ignore: unnecessary_null_comparison
       if (userMap != null) {
         var user = LoginInfo.fromJson(userMap);
         return user;
@@ -45,8 +47,9 @@ class Shared {
     await write(key: 'Master', value: json);
   }
 
-  static Future<List<MasterInfo>> getMaster() async {
+  static Future<List<MasterInfo>?> getMaster() async {
     String data = await read(key: 'Master');
+    // ignore: unnecessary_null_comparison
     if (data != null) {
       List<MasterInfo> masters =
           (jsonDecode(data) as List).map((i) => MasterInfo.fromJson(i)).toList();

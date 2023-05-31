@@ -5,17 +5,17 @@ import 'package:get/get.dart';
 
 class BaseTextField extends StatefulWidget {
   final double height, radius, fontSize;
-  final FocusNode focusNode;
-  final TextEditingController controller;
+  final FocusNode? focusNode;
+  final TextEditingController? controller;
   final bool isPassword;
   final TextAlign textAlign;
-  final TextInputType textInputType;
-  final String leftIcon, rightIcon, placeHolder;
-  final Color borderColor, textColor, backgroundColor;
-  final ValueChanged<String> onChanged;
+  final TextInputType? textInputType;
+  final String? leftIcon, rightIcon, placeHolder;
+  final Color? borderColor, textColor, backgroundColor;
+  final ValueChanged<String>? onChanged;
   final bool enabled;
   final int maxLines;
-  final List<TextInputFormatter> inputFormatter;
+  final List<TextInputFormatter>? inputFormatter;
 
   BaseTextField(
       {this.height = 45,
@@ -80,7 +80,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
               width: 25,
               height: 25,
               child: Image.asset(
-                widget.rightIcon,
+                widget.rightIcon!,
                 fit: BoxFit.contain,
                 color: AppStyle.barColor,
               ),
@@ -103,7 +103,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
         decoration: BoxDecoration(
           color: widget.backgroundColor,
           border: widget.borderColor != null
-              ? Border.all(color: widget.borderColor)
+              ? Border.all(color: widget.borderColor!)
               : null,
           borderRadius: BorderRadius.circular(widget.radius),
         ),
@@ -141,7 +141,7 @@ class _BaseTextFieldState extends State<BaseTextField> {
                         width: 30,
                         height: 30,
                         child: Image.asset(
-                          widget.leftIcon,
+                          widget.leftIcon!,
                           fit: BoxFit.contain,
                         ),
                       ),

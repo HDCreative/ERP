@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:developer';
+// import 'dart:developer';
 import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+// import 'package:get_storage/get_storage.dart';
 import 'package:hr_diag/app/core/Shared.dart';
 import 'package:hr_diag/app/routers/app_pages.dart';
 import 'package:motion_toast/motion_toast.dart';
@@ -16,18 +16,18 @@ import 'package:motion_toast/resources/arrays.dart';
 
 
 class NotificationService{
-  static FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin;
-  static NotificationAppLaunchDetails launchDetail;
+  static FlutterLocalNotificationsPlugin? flutterLocalNotificationsPlugin;
+  static NotificationAppLaunchDetails? launchDetail;
   static String channelIdFCM = 'high_importance_channel';
   static String channelNameFCM = "fcm_notification";
-  static AndroidNotificationChannel channel;
+  static AndroidNotificationChannel? channel;
 
   NotificationService();
 
   static Future<void> registerFCM() async {
     await Firebase.initializeApp();
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-    launchDetail = await flutterLocalNotificationsPlugin.getNotificationAppLaunchDetails(); // get to screen from fcm payload
+    launchDetail = await flutterLocalNotificationsPlugin!.getNotificationAppLaunchDetails(); // get to screen from fcm payload
     channel = AndroidNotificationChannel(channelIdFCM, channelNameFCM,
         description: 'This channel is used for important notifications.',
         importance: Importance.high);
@@ -45,7 +45,7 @@ class NotificationService{
     // If you're going to use other Firebase services in the background, such as Firestore,
     // make sure you call `initializeApp` before using other Firebase services.
     await Firebase.initializeApp();
-    displayNotification(message.notification, message.data);
+    displayNotification(message.notification!, message.data);
   }
 
   static Future<void> getFCMToken() async {
@@ -58,13 +58,13 @@ class NotificationService{
     });
   }
 
-  static String getInitRoute() {
+  static String? getInitRoute() {
     return launchDetail?.didNotificationLaunchApp == false ? AppPages.INITIAL : launchDetail?.notificationResponse?.payload;
   }
 
   static void receiverFCM() {
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      displayNotification(message.notification, message.data);
+      displayNotification(message.notification!, message.data);
       return;
     });
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
@@ -79,11 +79,11 @@ class NotificationService{
     var initializationSettings = InitializationSettings(android: initializationSettingsAndroid,iOS: initializationSettingsIOS);
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     if(Platform.isAndroid){
-      flutterLocalNotificationsPlugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()?.createNotificationChannel(channel);
+      flutterLocalNotificationsPlugin!.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()?.createNotificationChannel(channel!);
     }
     if(Platform.isIOS){
       if (Platform.isIOS) {
-        await flutterLocalNotificationsPlugin
+        await flutterLocalNotificationsPlugin!
             .resolvePlatformSpecificImplementation<
             IOSFlutterLocalNotificationsPlugin>()
             ?.requestPermissions(
@@ -93,21 +93,21 @@ class NotificationService{
         );
       }
     }
-    flutterLocalNotificationsPlugin.initialize(initializationSettings,
-        onDidReceiveNotificationResponse: (NotificationResponse notificationResponse){
-          onSelectNotification(notificationResponse.payload);
+    flutterLocalNotificationsPlugin!.initialize(initializationSettings,
+        onDidReceiveNotificationResponse: (NotificationResponse? notificationResponse){
+          onSelectNotification(notificationResponse!.payload!);
         });
   }
 
-  Future showNotificationWithDefaultSound({ String content, String payload}) async {
+  Future showNotificationWithDefaultSound({ String? content, String? payload}) async {
     cancelAllNotifications();
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
-        channel.id,channel.name,icon: '@mipmap/ic_launcher',
+        channel!.id,channel!.name,icon: '@mipmap/ic_launcher',
         importance: Importance.max, priority: Priority.high);
     var iOSPlatformChannelSpecifics = const DarwinNotificationDetails();
     var platformChannelSpecifics = NotificationDetails(android:
     androidPlatformChannelSpecifics,iOS:  iOSPlatformChannelSpecifics);
-    await flutterLocalNotificationsPlugin.show(
+    await flutterLocalNotificationsPlugin!.show(
       0,
       'FCM Example',
       content,
@@ -126,7 +126,7 @@ class NotificationService{
         description: 'This channel is used for important notifications.',
         importance: Importance.high);
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
-        channel.id, channel.name, channelDescription: channel.description,
+        channel!.id, channel!.name, channelDescription: channel!.description,
         importance: Importance.max,
         priority: Priority.high,
         fullScreenIntent: true);
@@ -136,16 +136,16 @@ class NotificationService{
         iOS: iOSPlatformChannelSpecifics);
     try {
       if (Platform.isAndroid) {
-        await flutterLocalNotificationsPlugin.show(
+        await flutterLocalNotificationsPlugin!.show(
             0, 'FCM Example', body, platformChannelSpecifics,
             payload: screen);
       } else {
-        await flutterLocalNotificationsPlugin.show(
+        await flutterLocalNotificationsPlugin!.show(
             0, 'FCM Example', body, platformChannelSpecifics,
             payload: screen);
       }
     } catch (e) {
-      await flutterLocalNotificationsPlugin.show(
+      await flutterLocalNotificationsPlugin!.show(
           0, "FCM Example", e.toString(), platformChannelSpecifics);
     }
   }
@@ -164,7 +164,7 @@ class NotificationService{
         layoutOrientation: ToastOrientation.rtl,
         animationType: AnimationType.fromRight,
         dismissable: true,
-      ).show(Get.context);
+      ).show(Get.context!);
       // HomeController controller = Get.find();
       // await controller.getMasterData().then((value) {
       //   if (value != null && value.length != 0) {
@@ -182,6 +182,6 @@ class NotificationService{
   }
 
   static void cancelAllNotifications() async {
-    await flutterLocalNotificationsPlugin.cancelAll();
+    await flutterLocalNotificationsPlugin!.cancelAll();
   }
 }

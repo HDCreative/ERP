@@ -6,24 +6,24 @@ import 'package:flutter/material.dart';
 class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double height;
   final Color textColor;
-  final VoidCallback leftClick;
-  final VoidCallback rightClick;
-  final IconData leftIcon;
-  final Widget rightIcon;
-  final Widget bottom;
-  final Widget title;
+  final VoidCallback? leftClick;
+  final VoidCallback? rightClick;
+  final IconData? leftIcon;
+  final Widget? rightIcon;
+  final PreferredSizeWidget? bottom;
+  final Widget? title;
   final bool rightIsNotify;
   final int notifyCount;
-  final Widget flexibleSpace;
+  final Widget? flexibleSpace;
   final bool isShowBackGround;
 
   BaseAppBar(
-      {Key key,
+      {Key? key,
       this.leftClick,
       this.title,
       this.rightClick,
-      this.height: 50,
-      this.textColor: Colors.white,
+      this.height = 50,
+      this.textColor = Colors.white,
       this.leftIcon,
       this.rightIcon,
       this.bottom,
@@ -41,14 +41,14 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       title: title,
       actions: <Widget>[getRightIcon()],
-      brightness: Brightness.dark,
+      //brightness: Brightness.dark,
       elevation: 50.0,
       leading: (leftIcon != null)
           ? IconButton(
               icon: Icon(leftIcon),
               color: Colors.white,
               onPressed: () {
-                leftClick();
+                leftClick;
               },
             )
           : SizedBox(),
@@ -75,9 +75,9 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
     if (!this.rightIsNotify) {
       if (this.rightIcon != null) {
         return IconButton(
-          icon: rightIcon,
+          icon: rightIcon!,
           onPressed: () {
-            rightClick();
+            rightClick;
           },
         );
       } else {
@@ -95,7 +95,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
                   fit: BoxFit.contain,
                 ),
                 onPressed: () {
-                  rightClick();
+                  rightClick;
                 },
               ),
               Visibility(
@@ -123,7 +123,7 @@ class BaseAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         onTap: () {
-          rightClick();
+          rightClick;
         },
       );
     }

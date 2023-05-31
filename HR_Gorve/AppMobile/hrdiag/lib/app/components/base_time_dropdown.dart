@@ -1,15 +1,16 @@
-import 'dart:isolate';
+//import 'dart:isolate';
 
 import 'package:hr_diag/app/base/DropDownItem.dart';
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BaseTimeDropDown extends StatefulWidget {
-  final DropDownItem value;
-  final List<DropDownItem> data;
+  final DropDownItem? value;
+  final List<DropDownItem>? data;
   bool isLocked;
   double height;
-  Function(DropDownItem value) function;
+  Function(DropDownItem value)? function;
   BaseTimeDropDown(
       {this.data, this.value, this.isLocked = false, this.height = 30,this.function});
   @override
@@ -37,7 +38,7 @@ class BaseTimeDropDownState extends State<BaseTimeDropDown> {
         disabledHint: !widget.isLocked
             ? null
             : Text(
-                widget.value.lable,
+                widget.value!.lable,
                 style: TextStyle(fontSize: 13),
               ),
         isExpanded: true,
@@ -48,10 +49,10 @@ class BaseTimeDropDownState extends State<BaseTimeDropDown> {
         ),
         iconSize: 30,
         underline: SizedBox(),
-        onChanged: !widget.isLocked ? (DropDownItem newValue) async {
-          this.widget.function(newValue);
+        onChanged: !widget.isLocked ? (DropDownItem? newValue) async {
+          this.widget.function!(newValue!);
         } : null,
-        items: widget.data
+        items: widget.data!
             .map<DropdownMenuItem<DropDownItem>>((DropDownItem value) {
           return DropdownMenuItem<DropDownItem>(
             value: value,

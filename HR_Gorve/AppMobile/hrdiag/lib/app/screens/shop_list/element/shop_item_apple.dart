@@ -2,7 +2,7 @@ import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
 import 'package:hr_diag/app/routers/app_routes.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,11 +10,11 @@ import '../../../base_controller.dart';
 
 // ignore: must_be_immutable
 class ShopAppleItem extends StatelessWidget {
-  ShopInfo shop;
-  Size size;
-  int index;
-  int lenght;
-  BaseController controller;
+  ShopInfo? shop;
+  Size? size;
+  int? index;
+  int? lenght;
+  BaseController? controller;
 
   ShopAppleItem({this.shop, this.size, this.index, this.lenght, this.controller});
 
@@ -23,9 +23,9 @@ class ShopAppleItem extends StatelessWidget {
     return InkWell(
       child: Container(
         margin: EdgeInsets.fromLTRB(5, 5, 5, 0),
-        width: size.width,
+        width: size!.width,
         decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey[300]),
+            border: Border.all(color: Colors.grey),
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Row(
           mainAxisSize: MainAxisSize.max,
@@ -61,7 +61,7 @@ class ShopAppleItem extends StatelessWidget {
                           "/" +
                           lenght.toString() +
                           ". " +
-                          shop.shopName,
+                          shop!.shopName.toString(),
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                     ),
@@ -70,7 +70,7 @@ class ShopAppleItem extends StatelessWidget {
                     height: 5,
                   ),
                   Visibility(
-                      visible: !shop.address.isNullOrWhiteSpace(),
+                      visible: !shop!.address!.isNullOrWhiteSpace(),
                       child: Row(
                         children: [
                           Container(
@@ -95,7 +95,7 @@ class ShopAppleItem extends StatelessWidget {
                   Visibility(
                     child: Container(
                       margin: EdgeInsets.only(top: 5),
-                      width: size.width,
+                      width: size!.width,
                       child: Row(
                         children: [
                           Expanded(
@@ -109,7 +109,7 @@ class ShopAppleItem extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
-                                    shop.oosAchieve.toString() + '%',
+                                    shop!.oosAchieve.toString() + '%',
                                     style: TextStyle(
                                         color: Colors.red,
                                         fontWeight: FontWeight.bold),
@@ -127,7 +127,7 @@ class ShopAppleItem extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
-                                    shop.sosAchieve.toString() + '%',
+                                    shop!.sosAchieve.toString() + '%',
                                     style: TextStyle(
                                         color: AppStyle.primary,
                                         fontWeight: FontWeight.bold),

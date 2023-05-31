@@ -1,18 +1,18 @@
 import 'dart:io';
 
-import 'package:hr_diag/app/base/LoginInfo.dart';
+// import 'package:hr_diag/app/base/LoginInfo.dart';
 import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
-import 'package:hr_diag/app/core/FileUtils.dart';
+// import 'package:hr_diag/app/core/FileUtils.dart';
 import 'package:hr_diag/app/screens/shop/shopComponents/KPIIndicator.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
-import 'package:url_launcher/url_launcher.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 import '../shop_controller.dart';
 
@@ -187,6 +187,7 @@ class ShopDetail extends GetView<ShopController> {
                   padding: EdgeInsets.all(10),
                   width: size.width,
                   height: 200,
+                  // ignore: unnecessary_null_comparison
                   child: controller.shop != null ? photoView() : Center()),
               Visibility(
                   visible: true,
@@ -235,6 +236,7 @@ class ShopDetail extends GetView<ShopController> {
   }
 
   Widget photoView() {
+    // ignore: unnecessary_null_comparison
     if (controller.overview.value == null) {
       if (!controller.shop.photo.isNullOrWhiteSpace()) {
         return CachedNetworkImage(

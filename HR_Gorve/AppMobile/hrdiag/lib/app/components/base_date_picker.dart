@@ -1,12 +1,14 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BaseDatePicker extends StatelessWidget {
-  String date;
-  double width;
-  double height;
-  double borderRadius;
-  Function onTap;
+  String? date;
+  double? width;
+  double? height;
+  double? borderRadius;
+  VoidCallback? onTap;
   BaseDatePicker(
       {this.date = 'Select date',
       this.width,
@@ -18,7 +20,7 @@ class BaseDatePicker extends StatelessWidget {
     return InkWell(
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(borderRadius),
+          borderRadius: BorderRadius.circular(borderRadius!),
           border: Border.all(
             color: Colors.grey,
             style: BorderStyle.solid,
@@ -37,7 +39,7 @@ class BaseDatePicker extends StatelessWidget {
               child: Container(
                 padding: EdgeInsets.fromLTRB(10, 5, 5, 5),
                 child: Text(
-                  date,
+                  date!,
                   style: TextStyle(color: Colors.black),
                 ),
               ),

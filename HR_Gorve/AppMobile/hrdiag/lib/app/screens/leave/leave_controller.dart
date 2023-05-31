@@ -1,4 +1,4 @@
-import 'package:get_storage/get_storage.dart';
+// import 'package:get_storage/get_storage.dart';
 import 'package:hr_diag/app/base/DropDownItem.dart';
 import 'package:hr_diag/app/base_controller.dart';
 import 'package:hr_diag/app/model/off_model.dart';
@@ -12,7 +12,7 @@ import '../../core/Urls.dart';
 import '../../core/Utility.dart';
 
 class LeaveController extends BaseController {
-  Rx<DateTime> date;
+  Rx<DateTime>? date;
   RxList<DropDownItem> lstLeaveReason = RxList.empty(growable: true);
   Rx<DropDownItem> leaveReason = DropDownItem(0, 'Paid holidays', 0).obs;
   RxList<DropDownItem> employees = RxList.empty(growable: true);
@@ -30,8 +30,8 @@ class LeaveController extends BaseController {
     super.onInit();
     date = DateTime.now().obs;
     employeeType = Get.arguments;
-    yearValue.value = years.where((e) => e.value == DateTime.now().year).single;
-    monthValue.value = months.where((e) => e.value == DateTime.now().month).single;
+    yearValue.value = years!.where((e) => e.value == DateTime.now().year).single;
+    monthValue.value = months!.where((e) => e.value == DateTime.now().month).single;
     search();
   }
 
@@ -55,11 +55,11 @@ class LeaveController extends BaseController {
   toDetail(OffModel info) {
     Get.toNamed(Routes.DETAILLEAVE,
         preventDuplicates: false,
-        arguments: [info, employeeType]).then((value) => search());
+        arguments: [info, employeeType])!.then((value) => search());
   }
 
   toAdd() {
-    Get.toNamed(Routes.ADDLEAVE, preventDuplicates: false)
+    Get.toNamed(Routes.ADDLEAVE, preventDuplicates: false)!
         .then((value) => search());
   }
 
@@ -97,7 +97,7 @@ class LeaveController extends BaseController {
         }
         employees.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
@@ -122,19 +122,19 @@ class LeaveController extends BaseController {
         }
         statusData.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
 
   Future<void> downloadDataLeave(
-      {String monthSelect, String yearSelect}) async {
+      {String? monthSelect, String? yearSelect}) async {
     showEasyLoading();
     lstDataOff.clear();
     Map<String, String> param = new Map();
     param["FUNCTION"] = 'GETLISTOFF';
-    param['Month'] = monthSelect;
-    param['Year'] = yearSelect;
+    param['Month'] = monthSelect!;
+    param['Year'] = yearSelect!;
     if (employeeType == 'sup') {
       employeeValue.value.value != -1
           ? param['EmployeeId'] = employeeValue.value.value.toString()
@@ -150,12 +150,12 @@ class LeaveController extends BaseController {
             .map((e) => OffModel.fromJson(e))
             .toList());
         if(lstDataOff.isNotEmpty){
-          totalStockDayOff.value = lstDataOff[0].totalStockDayOff;
-          totalDayOffUsed.value = lstDataOff[0].totalDayOffUsed;
+          totalStockDayOff.value = lstDataOff[0].totalStockDayOff.toString();
+          totalDayOffUsed.value = lstDataOff[0].totalDayOffUsed.toString();
         }
         lstDataOff.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }

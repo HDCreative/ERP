@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:get_storage/get_storage.dart';
+// import 'package:get_storage/get_storage.dart';
 import 'package:hr_diag/app/base/DropDownItem.dart';
 import 'package:hr_diag/app/base/MasterInfo.dart';
 import 'package:hr_diag/app/base_controller.dart';
@@ -29,7 +29,7 @@ class AddOTController extends BaseController {
   }
 
   void onChangeDate() {
-    DatePicker.showDatePicker(Get.context, showTitleActions: true,
+    DatePicker.showDatePicker(Get.context!, showTitleActions: true,
         onConfirm: (date) {
       dateString.value = date.nowFormat(format: 'dd-MM-yyyy');
       dateInt = Utility.dateTimeToInt(date);
@@ -48,7 +48,7 @@ class AddOTController extends BaseController {
 
   Future<void> requestOT() async {
     if (!Utility.isNullOrWhiteSpace(editOTValue.text)) {
-      double otValue = double.tryParse(editOTValue.text);
+      double? otValue = double.tryParse(editOTValue.text);
       if (otValue == null) {
         alert(
             content:
@@ -70,13 +70,13 @@ class AddOTController extends BaseController {
       hideEasyLoading();
       if (value.statusCode == 200) {
         confirm1(
-            content: value.content,
+            content: value.content.toString(),
             onConfirm: () {
               Get.back();
               Get.back();
             });
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
@@ -106,7 +106,7 @@ class AddOTController extends BaseController {
           reasonSelect.value = lstReason[0];
         }
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }

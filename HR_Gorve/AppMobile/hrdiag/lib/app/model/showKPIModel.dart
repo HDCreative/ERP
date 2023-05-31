@@ -1,6 +1,6 @@
 class ShowKPIModel {
-  int showOT;
-  int showLeave;
+  int? showOT;
+  int? showLeave;
 
   ShowKPIModel({this.showOT, this.showLeave});
 

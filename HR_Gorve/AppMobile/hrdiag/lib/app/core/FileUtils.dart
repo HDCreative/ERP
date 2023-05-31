@@ -11,7 +11,8 @@ class FileUtils {
   static Future<String> getExternalStoragePath() async {
     Directory directory;
     if (Platform.isAndroid) {
-      directory = await getExternalStorageDirectory();
+      //directory = await getExternalStorageDirectory();
+      directory = (await getExternalStorageDirectory())!;
     } else {
       directory = await getApplicationDocumentsDirectory();
     }

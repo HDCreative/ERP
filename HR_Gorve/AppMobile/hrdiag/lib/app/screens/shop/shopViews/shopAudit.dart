@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:hr_diag/app/base/MasterInfo.dart';
-import 'package:hr_diag/app/base/ShopInfo.dart';
+// import 'package:hr_diag/app/base/ShopInfo.dart';
 import 'package:hr_diag/app/components/base_textfield.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
@@ -61,6 +61,7 @@ class ShopAudit extends GetView<ShopController> {
                       1,
                       2,
                     ],
+                    // ignore: unnecessary_null_comparison
                     child: controller.lstAttendants != null &&
                             controller.lstAttendants.length >= 1 &&
                             controller.lstAttendants[0].attendantType == 0 &&
@@ -117,6 +118,7 @@ class ShopAudit extends GetView<ShopController> {
                       1,
                       2,
                     ],
+                    // ignore: unnecessary_null_comparison
                     child: controller.lstAttendants != null &&
                             controller.lstAttendants.length >= 2 &&
                             controller.lstAttendants[1].attendantType == 1 &&
@@ -222,6 +224,7 @@ class ShopAudit extends GetView<ShopController> {
   }
 
   Widget listKPI() {
+    // ignore: unnecessary_null_comparison
     return controller.lstKPI != null && controller.lstKPI.length != 0
         ? Expanded(
             flex: 1,
@@ -232,6 +235,7 @@ class ShopAudit extends GetView<ShopController> {
                     itemBuilder: (BuildContext buildContext, int index) {
                       return itemKPI(controller.lstKPI[index]);
                     })))
+        // ignore: unnecessary_null_comparison
         : controller.work.value.auditResult != null &&
                 controller.work.value.auditResult != 0 &&
                 controller.work.value.auditResult != 1

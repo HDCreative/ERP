@@ -3,12 +3,12 @@ import 'dart:core';
 import 'BaseInfo.dart';
 
 class LoginInfo extends BaseInfo {
-  int employeeId;
-  String employeeName;
-  String loginName;
-  String accessToken;
-  String avatar;
-  int typeid;
+  late int employeeId;
+  late String employeeName;
+  late String loginName;
+  late String accessToken;
+  late String avatar;
+  late int typeid;
 
   LoginInfo();
 

@@ -1,9 +1,11 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import '../base/LoginInfo.dart';
@@ -13,17 +15,17 @@ import 'Utility.dart';
 
 class HttpUtils {
   static Future<void> getDefaultBody(
-      {@required Map<String, dynamic> body}) async {
+      {required Map<String, dynamic> body}) async {
     if (body != null) {
-      LoginInfo user = await Shared.getUser();
-      body['access_token'] = user.accessToken;
+      LoginInfo? user = await Shared.getUser();
+      body['access_token'] = user!.accessToken;
       body["platform"] = Utility.getPlatform();
       body["version"] = await Utility.getVersion();
     }
   }
 
   static Future<Response> download(
-      {@required String url, Map<String, dynamic> body}) async {
+      {required String url, required Map<String, dynamic> body}) async {
     try {
       await getDefaultBody(body: body);
       return await http
@@ -49,8 +51,8 @@ class HttpUtils {
   }
 
   static Future<HttpResponseMessage> post(
-      {@required String url,
-      @required Map<String, dynamic> body,
+      {required String url,
+      required Map<String, dynamic> body,
       bool isLogin = false}) async {
     if (!isLogin) {
       await getDefaultBody(body: body);
@@ -92,10 +94,10 @@ class HttpUtils {
   }
 
   static Future<HttpResponseMessage> uploadBytes(
-      {@required String url,
-      @required Map<String, dynamic> body,
-      List<List<int>> data,
-      List<String> fileKeys}) async {
+      {required String url,
+      required Map<String, dynamic> body,
+      required List<List<int>> data,
+      required List<String> fileKeys}) async {
     await getDefaultBody(body: body);
     HttpResponseMessage response = new HttpResponseMessage();
     try {
@@ -155,9 +157,9 @@ class HttpUtils {
   }
 
   static Future<HttpResponseMessage> uploadFile(
-      {@required String url,
-      Map<String, dynamic> body,
-      @required File file}) async {
+      {required String url,
+      required Map<String, dynamic> body,
+      required File file}) async {
     await getDefaultBody(body: body);
     HttpResponseMessage response = new HttpResponseMessage();
     var request = http.MultipartRequest('POST', Uri.parse(url));
@@ -166,7 +168,7 @@ class HttpUtils {
         filename: file.path.split("/").last));
     for (var entry in body.entries) {
       request.fields[entry.key] =
-          entry.value != null ? entry.value.toString() : null;
+          (entry.value != null ? entry.value.toString() : null)!;
     }
     try {
       var result = await http.Response.fromStream(await request.send())

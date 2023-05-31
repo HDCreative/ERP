@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ShopTab {
-  Widget tabBar({TabController tabController, List<String> lst, Color hexColor}) {
+  Widget tabBar({TabController? tabController, List<String>? lst, Color? hexColor}) {
     return Container(
       height: 30,
       decoration: BoxDecoration(
-          border: Border.all(color: hexColor, width: 1)),
+          border: Border.all(color: hexColor!, width: 1)),
       child: TabBar(
         indicatorSize: TabBarIndicatorSize.tab,
         labelPadding: EdgeInsets.all(0),
@@ -26,7 +26,7 @@ class ShopTab {
                           color: hexColor, width: 1))),
               child: Tab(
                 child: Text(
-                  lst[0],
+                  lst![0],
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                 ),
               )),

@@ -7,14 +7,14 @@ import '../../core/HttpUtils.dart';
 import '../../core/Urls.dart';
 
 class DetailLeaveController extends BaseController{
-  OffModel info;
+  late OffModel info;
   TextEditingController editComment = TextEditingController();
 
   @override
   onInit(){
     info = Get.arguments[0];
     employeeType = Get.arguments[1];
-    editComment.text = info.userConfirmComment;
+    editComment.text = info.userConfirmComment!;
     super.onInit();
   }
 
@@ -23,7 +23,7 @@ class DetailLeaveController extends BaseController{
     return false;
   }
 
-  Future<void> confirmLeave({int confirm}) async {
+  Future<void> confirmLeave({int? confirm}) async {
     Map<String, dynamic> param = new Map();
     param["FUNCTION"] = 'CONFRIMOFF';
     param["Id"] = info.id.toString();
@@ -31,12 +31,12 @@ class DetailLeaveController extends BaseController{
     param['Commnet'] = editComment.text;
     await HttpUtils.post(url: Urls.OT, body: param).then((value) {
       if (value.statusCode == 200) {
-        confirm1(content: value.content,onConfirm: (){
+        confirm1(content: value.content.toString(),onConfirm: (){
           Get.back();
           Get.back();
         });
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }

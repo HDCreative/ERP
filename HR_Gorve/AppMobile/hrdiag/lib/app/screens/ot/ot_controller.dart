@@ -38,7 +38,7 @@ class OTController extends BaseController {
           errorInterner();
         }
         showEasyLoading();
-        user.value = await Shared.getUser();
+        user.value = (await Shared.getUser())!;
         for (int i = 1; i <= 12; i++) {
           DropDownItem month = new DropDownItem(i, 'Tháng ' + i.toString(), i);
           dataMonth.add(month);
@@ -89,13 +89,13 @@ class OTController extends BaseController {
   }
 
   Future<void> onAddOTTap() async {
-    Get.toNamed(Routes.ADDOT).then((value) async {
+    Get.toNamed(Routes.ADDOT)!.then((value) async {
       reload();
     });
   }
 
   void onViewOTTap(OTModel info) {
-    Get.toNamed(Routes.DETAILOT, arguments: [info, employeeType])
+    Get.toNamed(Routes.DETAILOT, arguments: [info, employeeType])!
         .then((value) async {
       reload();
     });
@@ -135,7 +135,7 @@ class OTController extends BaseController {
         }
         statusData.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
@@ -159,12 +159,12 @@ class OTController extends BaseController {
         }
         employees.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
 
-  Future<void> downloadDataOT({String monthSelect, String yearSelect}) async {
+  Future<void> downloadDataOT({String? monthSelect, String? yearSelect}) async {
     lstDataOT.clear();
     Map<String, dynamic> param = new Map();
     param["FUNCTION"] = 'GETLISTOT';
@@ -184,7 +184,7 @@ class OTController extends BaseController {
             (value.content as List).map((e) => OTModel.fromJson(e)).toList());
         lstDataOT.refresh();
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }

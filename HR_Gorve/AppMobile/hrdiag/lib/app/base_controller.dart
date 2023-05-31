@@ -1,37 +1,41 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
-import 'package:hr_diag/app/base/ShopInfo.dart';
-import 'package:hr_diag/app/core/NotifcationService.dart';
-import 'package:hr_diag/app/routers/app_routes.dart';
-import 'package:progress_dialog/progress_dialog.dart';
+// import 'package:hr_diag/app/base/ShopInfo.dart';
+// import 'package:hr_diag/app/core/NotifcationService.dart';
+// import 'package:hr_diag/app/routers/app_routes.dart';
+//import 'package:progress_dialog/progress_dialog.dart';
+import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
 
 import 'base/DropDownItem.dart';
 import 'base/WorkResultInfo.dart';
 
 abstract class BaseController extends FullLifeCycleController
     with StateMixin, SingleGetTickerProviderMixin {
-  ProgressDialog progess;
-  Rx<WorkResultInfo> work;
-  List<DropDownItem> years = new List.empty(growable: true);
-  List<DropDownItem> months = new List.empty(growable: true);
-  String employeeType;
+  ProgressDialog? progess;
+  Rx<WorkResultInfo>? work;
+  List<DropDownItem>? years = new List.empty(growable: true);
+  List<DropDownItem>? months = new List.empty(growable: true);
+  String? employeeType;
 
   @override
   void onInit() {
     for (int i = 1; i <= 12; i++) {
+      // ignore: unused_local_variable
       DropDownItem employee =
           new DropDownItem(i, 'Employee ' + i.toString(), i);
       DropDownItem month = new DropDownItem(i, 'Tháng ' + i.toString(), i);
-      months.add(month);
+      months!.add(month);
     }
-    years.add(new DropDownItem(2023, 'Năm 2023', 2023));
-    years.add(new DropDownItem(2024, 'Năm 2024', 2024));
-    years.add(new DropDownItem(2025, 'Năm 2025', 2025));
+    years!.add(new DropDownItem(2023, 'Năm 2023', 2023));
+    years!.add(new DropDownItem(2024, 'Năm 2024', 2024));
+    years!.add(new DropDownItem(2025, 'Năm 2025', 2025));
 
     // EasyLoading.addStatusCallback((status) {
     //   if (state == EasyLoadingStatus.show) {
@@ -53,11 +57,11 @@ abstract class BaseController extends FullLifeCycleController
     super.onReady();
   }
 
-  void alert({String title = 'Thông báo', @required String content}) {
+  void alert({String title = 'Thông báo', @required String? content}) {
     Get.defaultDialog(
         title: title,
         titleStyle: TextStyle(color: Colors.black, fontSize: 18),
-        middleText: content,
+        middleText: content!,
         middleTextStyle: TextStyle(
           color: Colors.black,
           fontSize: 15,
@@ -81,6 +85,7 @@ abstract class BaseController extends FullLifeCycleController
 
   Future<void> isEnableGPS() async {
     bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
+    // ignore: unnecessary_null_comparison
     if (isLocationServiceEnabled == null || !isLocationServiceEnabled) {
       alert(
           title: "GPS Notifications",
@@ -91,13 +96,13 @@ abstract class BaseController extends FullLifeCycleController
 
   void confirm(
       {String title = 'Thông báo',
-      @required String content,
-      Function onConfirm,
-      Function onCancel}) {
+      @required String? content,
+      VoidCallback? onConfirm,
+      VoidCallback? onCancel}) {
     Get.defaultDialog(
         title: title,
         titleStyle: TextStyle(color: Colors.black, fontSize: 18),
-        middleText: content,
+        middleText: content!,
         middleTextStyle: TextStyle(
           color: Colors.black,
           fontSize: 15,
@@ -117,24 +122,24 @@ abstract class BaseController extends FullLifeCycleController
         onCancel: onCancel);
   }
 
-  confirmOK({String content, Function functionOk}) async {
+  confirmOK({String? content, VoidCallback? functionOk}) async {
     Get.defaultDialog(
       barrierDismissible: false,
       title: "Thông báo",
       titlePadding: EdgeInsets.only(top: 20),
-      content: Padding(padding: EdgeInsets.all(10), child: Text(content)),
+      content: Padding(padding: EdgeInsets.all(10), child: Text(content!)),
       textConfirm: "Ok",
       onConfirm: functionOk,
     );
   }
 
   void confirm1({
-    String content,
-    Function() onConfirm,
+    String? content,
+    Function()? onConfirm,
   }) {
     showGeneralDialog(
         barrierDismissible: false,
-        context: Get.context,
+        context: Get.context!,
         pageBuilder: (ctx, a1, a2) {
           return Container();
         },
@@ -166,7 +171,7 @@ abstract class BaseController extends FullLifeCycleController
                 content: Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                    content,
+                    content!,
                     style: const TextStyle(fontSize: 17),
                     textAlign: TextAlign.center,
                   ),

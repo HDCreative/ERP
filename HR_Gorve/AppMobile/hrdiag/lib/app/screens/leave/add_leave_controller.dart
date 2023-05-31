@@ -63,13 +63,14 @@ class AddLeaveController extends BaseController{
         }
         lstLeaveReason.refresh();
       }else{
-        alert(content: value.content);
+        // alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
 
   void onChangeDate() {
-    DatePicker.showDatePicker(Get.context, showTitleActions: true,
+    DatePicker.showDatePicker(Get.context!, showTitleActions: true,
         onConfirm: (date) {
           dateString.value = date.nowFormat(format: 'dd-MM-yyyy');
           dateInt = Utility.dateTimeToInt(date);
@@ -88,12 +89,12 @@ class AddLeaveController extends BaseController{
         body: param).then((value){
       hideEasyLoading();
       if (value.statusCode == 200) {
-        confirm1(content: value.content,onConfirm:(){
+        confirm1(content: value.content.toString(),onConfirm:(){
           Get.back();
           Get.back();
         });
       }else{
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }

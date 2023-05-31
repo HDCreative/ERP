@@ -1,13 +1,13 @@
-import 'package:hr_diag/app/core/Utility.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:hr_diag/app/core/Utility.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class KPIIndicator extends StatelessWidget{
-  final String name;
-  final String percent;
-  final double value;
-  final Color color;
-  final double size;
+  final String? name;
+  final String? percent;
+  final double? value;
+  final Color? color;
+  final double? size;
 
   KPIIndicator({this.name,this.percent,this.value,this.color,this.size});
   @override
@@ -28,13 +28,13 @@ class KPIIndicator extends StatelessWidget{
                       radius: 4,
                     ),
                     SizedBox(width: 5,),
-                    Text(name,style: TextStyle(fontWeight: FontWeight.bold),),
+                    Text(name!,style: TextStyle(fontWeight: FontWeight.bold),),
                   ],
                 )
               ),
               Align(
                 alignment: Alignment.centerRight,
-                child: Text(percent,style: TextStyle(fontWeight: FontWeight.bold),),
+                child: Text(percent!,style: TextStyle(fontWeight: FontWeight.bold),),
               )
             ],
           ),
@@ -43,7 +43,7 @@ class KPIIndicator extends StatelessWidget{
           height: 10,
           child: ClipRRect(borderRadius: BorderRadius.all(Radius.circular(10)),child: LinearProgressIndicator(
             backgroundColor: Colors.white,
-            valueColor: AlwaysStoppedAnimation<Color>(color,),
+            valueColor: AlwaysStoppedAnimation<Color>(color!,),
             value: value,
           ),
         ))

@@ -3,18 +3,18 @@ import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/components/base_gradient_button.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/screens/leave/add_leave_controller.dart';
-import 'package:hr_diag/app/screens/leave/leave_controller.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:hr_diag/app/screens/leave/leave_controller.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/framework.dart';
+// import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 import '../../components/base_date_picker.dart';
 import '../../components/base_textfield.dart';
 import '../../core/DecimalTextInputFormatter.dart';
 import 'leaveComponents/Separator.dart';
-import 'leaveComponents/chooseDateTime.dart';
+// import 'leaveComponents/chooseDateTime.dart';
 
 class AddLeave extends GetView<AddLeaveController> {
   @override
@@ -148,8 +148,8 @@ class AddLeave extends GetView<AddLeaveController> {
                                   child: DropdownButton<DropDownItem>(
                                     underline: SizedBox(),
                                     isExpanded: true,
-                                    onChanged: (DropDownItem item) {
-                                      controller.leaveReason.value = item;
+                                    onChanged: (DropDownItem? item) {
+                                      controller.leaveReason.value = item!;
                                     },
                                     value: controller.leaveReason.value,
                                     items: controller.lstLeaveReason

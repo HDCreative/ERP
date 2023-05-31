@@ -50,12 +50,12 @@ class WelcomeController extends BaseController {
 
   Future<void> _startMain() async {
     bool check = await _checkPermissions();
-    LoginInfo user = await Shared.getUser();
+    LoginInfo? user = await Shared.getUser();
     employeeName.value = '';
     if (check) {
       if (user != null) {
         Future.delayed(const Duration(seconds: 1), () {
-          if(user.typeid != 10)
+          if (user.typeid != 10)
             Get.offAllNamed(Routes.MAIN);
           else
             Get.offAllNamed(Routes.SHOP);

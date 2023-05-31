@@ -11,7 +11,7 @@ import '../../routers/app_routes.dart';
 
 class ShopListController extends BaseController {
   TextEditingController searchController = new TextEditingController();
-  Timer timeHandle;
+  Timer? timeHandle;
 
   RxList<ShopInfo> lstShop = RxList.empty(growable: true);
   @override
@@ -31,7 +31,7 @@ class ShopListController extends BaseController {
       if (value.statusCode == 200) {
         lstShop.addAll((value.content as List).map((e) => ShopInfo.fromJson(e)).toList());
       }else{
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }
@@ -48,7 +48,7 @@ class ShopListController extends BaseController {
 
   toShop(ShopInfo shop) {
     Get.toNamed(Paths.SHOP,
-        arguments: <dynamic>[shop], preventDuplicates: false).then((value) async {
+        arguments: <dynamic>[shop], preventDuplicates: false)!.then((value) async {
        await downloadShop();
     });
   }

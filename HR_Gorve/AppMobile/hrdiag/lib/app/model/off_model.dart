@@ -1,18 +1,18 @@
 class OffModel {
-  int id;
-  String employeeName;
-  String oFFDate;
-  int offType;
-  String oFFTypeName;
-  double offValue;
-  int status;
-  String statusName;
-  String employeeComment;
-  String userConfirmComment;
-  String createdTime;
-  String confirmTime;
-  String totalDayOffUsed;
-  String totalStockDayOff;
+  int? id;
+  String? employeeName;
+  String? oFFDate;
+  int? offType;
+  String? oFFTypeName;
+  double? offValue;
+  int? status;
+  String? statusName;
+  String? employeeComment;
+  String? userConfirmComment;
+  String? createdTime;
+  String?confirmTime;
+  String? totalDayOffUsed;
+  String? totalStockDayOff;
 
   OffModel(
       {this.id,

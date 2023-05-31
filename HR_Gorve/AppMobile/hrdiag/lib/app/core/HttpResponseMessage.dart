@@ -1,7 +1,7 @@
 class HttpResponseMessage {
-  int statusCode;
-  Object content;
-  int totalRaw;
+  int? statusCode;
+  Object? content;
+  int? totalRaw;
   HttpResponseMessage({this.statusCode, this.content, this.totalRaw});
   HttpResponseMessage.fromJson(Map<String, dynamic> json) {
     statusCode = json["StatusCode"];

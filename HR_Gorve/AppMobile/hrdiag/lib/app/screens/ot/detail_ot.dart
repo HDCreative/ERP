@@ -2,9 +2,9 @@ import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/core/AppStyle.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:hr_diag/app/extensions/ExsString.dart';
-import 'package:hr_diag/app/screens/leave/leaveComponents/Separator.dart';
+// import 'package:hr_diag/app/screens/leave/leaveComponents/Separator.dart';
 import 'package:hr_diag/app/screens/ot/detail_ot_controller.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -230,14 +230,14 @@ class DetailOTView extends GetView<DetailOTController> {
                       ),
                       Visibility(
                           visible: controller.employeeType == 'sup' &&
-                              controller.info.status == 2,
+                              controller.info!.status == 2,
                           child: Row(
                             children: [
                               ElevatedButton(
                                 child: Text('Đồng ý'),
                                 onPressed: () async {
                                   await controller.confirmOT(
-                                      controller.info, 1);
+                                      controller.info!, 1);
                                 },
                                 style: ElevatedButton.styleFrom(
                                     primary: Colors.blue,

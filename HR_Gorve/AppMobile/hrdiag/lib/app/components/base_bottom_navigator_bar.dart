@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BaseBottomNavigationBar extends StatefulWidget {
-  final List<TabInfo> bars;
-  final Function(int) onTap;
-  final int currentIndex;
+  final List<TabInfo>? bars;
+  final Function(int)? onTap;
+  final int? currentIndex;
   BaseBottomNavigationBar({this.bars, this.onTap, this.currentIndex});
   @override
   State<StatefulWidget> createState() {
@@ -31,26 +31,26 @@ class _BaseBottomNavigationBarState extends State<BaseBottomNavigationBar> {
         selectedItemColor: AppStyle.primary,
         unselectedItemColor: Colors.grey,
         type: BottomNavigationBarType.fixed,
-        currentIndex: widget.currentIndex,
+        currentIndex: widget.currentIndex!,
         onTap: (index) {
-          widget.onTap(index);
+          widget.onTap!(index);
         },
-        items: barsList(),
+        items: barsList()!,
       ),
     );
   }
 
-  List<BottomNavigationBarItem> barsList() {
+  List<BottomNavigationBarItem>? barsList() {
     List<BottomNavigationBarItem> _list = new List.empty(growable: true);
-    if (widget.bars != null && widget.bars.length > 0) {
-      widget.bars.forEach((element) {
+    if (widget.bars != null && widget.bars!.length > 0) {
+      widget.bars!.forEach((element) {
         _list.add(BottomNavigationBarItem(
           label: element.title,
           icon: Image.asset(
-            element.icon,
+            element.icon!,
             width: 30.0,
             height: 30.0,
-            color: element.isSelected ? AppStyle.primary : Colors.grey,
+            color: element.isSelected! ? AppStyle.primary : Colors.grey,
           ),
         ));
       });

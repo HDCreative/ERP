@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BaseButton extends StatelessWidget {
-  final Function onPressed;
+  final VoidCallback? onPressed;
   final String title;
   final double height;
   final double titleSize;
@@ -12,7 +12,7 @@ class BaseButton extends StatelessWidget {
   final Color backgroud;
 
   const BaseButton(
-      {Key key,
+      {Key? key,
       this.onPressed,
       this.title = '',
       this.height = 40,

@@ -4,13 +4,13 @@ import 'package:get/get.dart';
 import 'package:hr_diag/app/core/Utility.dart';
 import 'package:intl/intl.dart';
 
-import '../../base/MasterInfo.dart';
+// import '../../base/MasterInfo.dart';
 import '../../core/HttpUtils.dart';
 import '../../core/Urls.dart';
 import '../../model/ot_model.dart';
 
 class DetailOTController extends BaseController {
-  OTModel info;
+  OTModel? info;
   TextEditingController editComment = TextEditingController();
 
   @override
@@ -46,13 +46,13 @@ class DetailOTController extends BaseController {
       hideEasyLoading();
       if (value.statusCode == 200) {
         confirm1(
-            content: value.content,
+            content: value.content.toString(),
             onConfirm: () {
               Get.back();
               Get.back();
             });
       } else {
-        alert(content: value.content);
+        alert(content: value.content.toString());
       }
     });
   }

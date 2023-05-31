@@ -1,16 +1,17 @@
-import 'dart:isolate';
+//import 'dart:isolate';
 
-import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
+//import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:hr_diag/app/base/DropDownItem.dart';
-import 'package:flutter/cupertino.dart';
+//import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class BaseDropDown extends StatefulWidget {
-  DropDownItem value;
-  List<DropDownItem> data;
+  DropDownItem? value;
+  List<DropDownItem>? data;
   bool isLocked;
   double height;
-  Function(DropDownItem value) function;
+  Function(DropDownItem value)? function;
   BaseDropDown(
       {this.data, this.value, this.isLocked = false, this.height = 30, this.function});
   @override
@@ -39,7 +40,7 @@ class BaseDropDownState extends State<BaseDropDown> {
         disabledHint: !widget.isLocked
             ? null
             : Text(
-                widget.value.lable,
+                widget.value!.lable,
                 style: TextStyle(fontSize: 13),
               ),
         isExpanded: true,
@@ -47,10 +48,10 @@ class BaseDropDownState extends State<BaseDropDown> {
         icon: Icon(Icons.arrow_drop_down),
         iconSize: 20,
         underline: SizedBox(),
-        onChanged: !widget.isLocked ? (DropDownItem newValue) async {
-          this.widget.function(newValue);
+        onChanged: !widget.isLocked ? (DropDownItem? newValue) async {
+          this.widget.function!(newValue!);
         } : null,
-        items: widget.data
+        items: widget.data!
             .map<DropdownMenuItem<DropDownItem>>((DropDownItem value) {
           return DropdownMenuItem<DropDownItem>(
             value: value,

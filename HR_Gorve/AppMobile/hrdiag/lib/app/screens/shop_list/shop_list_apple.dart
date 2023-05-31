@@ -1,17 +1,17 @@
 import 'package:hr_diag/app/components/base_app_bar.dart';
 import 'package:hr_diag/app/components/base_bottom_navigator_bar.dart';
-import 'package:hr_diag/app/components/base_gradient_button.dart';
-import 'package:hr_diag/app/components/base_textfield.dart';
-import 'package:hr_diag/app/core/AppStyle.dart';
-import 'package:hr_diag/app/routers/app_routes.dart';
+// import 'package:hr_diag/app/components/base_gradient_button.dart';
+// import 'package:hr_diag/app/components/base_textfield.dart';
+// import 'package:hr_diag/app/core/AppStyle.dart';
+// import 'package:hr_diag/app/routers/app_routes.dart';
 import 'package:hr_diag/app/screens/shop_list/shop_list_apple_controller.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'element/shop_item.dart';
+// import 'element/shop_item.dart';
 import 'element/shop_item_apple.dart';
-import 'shop_list_controller.dart';
+// import 'shop_list_controller.dart';
 
 class ShopListAppleView extends GetView<ShopListAppleController> {
 
@@ -97,7 +97,7 @@ class ShopListAppleView extends GetView<ShopListAppleController> {
             currentIndex: controller.currentIndex,
             bars: controller.tabs,
             onTap: (index) {
-              controller.changeTab(controller.tabs[index]);
+              controller.changeTab(controller.tabs![index]);
             },
           ),
 

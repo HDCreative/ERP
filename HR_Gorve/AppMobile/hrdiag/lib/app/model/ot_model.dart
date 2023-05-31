@@ -1,16 +1,16 @@
 class OTModel {
-  int id;
-  String oTDate;
-  int oTTarget;
-  String oTValue;
-  int status;
-  String statusName;
-  String employeeComment;
-  String userConfirmComment;
-  String createdTime;
-  String confirmTime;
-  String employeeName;
-  String oTTargetName;
+  int? id;
+  String? oTDate;
+  int? oTTarget;
+  String? oTValue;
+  int? status;
+  String? statusName;
+  String? employeeComment;
+  String? userConfirmComment;
+  String? createdTime;
+  String? confirmTime;
+  String? employeeName;
+  String? oTTargetName;
 
   OTModel(
       {this.id,
