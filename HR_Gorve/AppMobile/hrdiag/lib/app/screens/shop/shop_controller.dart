@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, unused_local_variable
 import 'dart:async';
 import 'dart:io';
 import 'package:hr_diag/app/base/AttendantInfo.dart';
@@ -66,7 +66,7 @@ class ShopController extends BaseController {
       }
     });
     position =
-        Position(longitude: 0.0, latitude: 0.0, accuracy: 0.0, altitude: 0.0)
+        Position(longitude: 0.0, latitude: 0.0, accuracy: 0.0, altitude: 0.0, heading: 0.0, speed: 0.0, speedAccuracy: 0.0, timestamp: null)
             .obs;
     lstAttendants.clear();
     overview.value.photoServer = '';
@@ -114,16 +114,16 @@ class ShopController extends BaseController {
       timeStart = timeStart + 1;
       LocationData loc = await location.getLocation();
       Position posTemp = new Position(
-          longitude: loc.longitude,
-          latitude: loc.latitude,
-          accuracy: loc.accuracy,
+          longitude: loc.longitude!,
+          latitude: loc.latitude!,
+          accuracy: loc.accuracy!,
           timestamp: null,
-          altitude: null,
-          speedAccuracy: null,
-          heading: null,
-          speed: null);
+          altitude: loc.altitude!,
+          speedAccuracy: loc.speedAccuracy!,
+          heading: loc.heading!,
+          speed: loc.speed!);
       position = posTemp.obs;
-      if (position == null || position.value == null) {
+      if (position == null || position!.value == null) {
         await Future.delayed(Duration(seconds: 1));
       }
     }

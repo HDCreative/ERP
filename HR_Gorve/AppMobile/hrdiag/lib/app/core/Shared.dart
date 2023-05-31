@@ -22,7 +22,7 @@ class Shared {
     return await _storage!.remove(key!);
   }
 
-  static Future<void> setUser(LoginInfo user) async {
+  static Future<void> setUser(LoginInfo? user) async {
     String json = jsonEncode(user);
     await write(key: 'UserLogin', value: json);
   }

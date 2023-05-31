@@ -163,7 +163,8 @@ class ShopAppleController extends BaseController {
     }
   }
 
-  void setPosition() async {
+//trước đó là hàm void
+  Future<void> setPosition() async {
     try {
       int timeStart = 0;
       while ((position == null ||
@@ -178,10 +179,10 @@ class ShopAppleController extends BaseController {
             latitude: loc.latitude!,
             accuracy: loc.accuracy!,
             timestamp: null,
-            altitude: null,
-            speedAccuracy: null,
-            heading: null,
-            speed: null);
+            altitude: loc.altitude!,
+            speedAccuracy: loc.speedAccuracy!,
+            heading: loc.heading!,
+            speed: loc.speed!);
         position = posTemp.obs;
         if (position == null || position!.value == null) {
           await Future.delayed(Duration(seconds: 1));
@@ -397,7 +398,7 @@ class ShopAppleController extends BaseController {
   // }
   //
 
-  void alertApple({String title = 'Message', @required String content}) {
+  void alertApple({String title = 'Message', required String content}) {
     Get.defaultDialog(
         title: title,
         titleStyle: TextStyle(color: Colors.black, fontSize: 18),
